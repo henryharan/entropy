@@ -40,26 +40,26 @@ try:
     
 except ImportError as e:
     print("[!] Failed to install some necessary dependences!")
-    print("[!] Because of this entropy will be work incorrectly!")
+    print("[!] Because of this Entropy will be work incorrectly!")
     print("[!] You need to install dependences from related.txt!")
     print(" ")
 
 TMP_PATH='/tmp/'
 
 parser=argparse.ArgumentParser(description="Please use CNVD-2017-02776 exploit just in educational purpose!")
-parser.add_argument("-b","--brand",dest='brand',help="Choose the brand of IP Camera. 1 represents Netwave,2 represents GoAhead.",choices=[1,2],type=int)
-parser.add_argument("-o","--output",dest='outputfile',help="Output into path you input.The default path in dir /tmp",type=str)
-parser.add_argument("-T","--timeout",dest='timeout',help="The default timout for netwave is 300s.",type=int,default=300)
-parser.add_argument("-t","--task",dest='tasks',help="Run TASKS number of connects in parallel,default is 10.",default=10,type=int)
-parser.add_argument("-c","--count",dest='count',help="The number of ip you want to get from ZoomEye.The maximum is 2000. Default is 100.",default=100,type=int)
+parser.add_argument("-b","--brand",dest='brand',help="Choose the brand of IP Camera. 1 - represents Netwave, 2 - represents GoAhead.",choices=[1,2],type=int)
+parser.add_argument("-o","--output",dest='outputfile',help="Output into path you input. The default path in dir /tmp",type=str)
+parser.add_argument("-T","--timeout",dest='timeout',help="The default timeout for netwave is 300s.",type=int,default=300)
+parser.add_argument("-t","--task",dest='tasks',help="Run TASKS number of connects in parallel, default is 10.",default=10,type=int)
+parser.add_argument("-c","--count",dest='count',help="The number of ip you want to get from ZoomEye. The maximum is 2000. Default is 100.",default=100,type=int)
 group1=parser.add_mutually_exclusive_group()
 group1.add_argument("-q","--quiet",dest='quiet',help="Quiet mode.",action='store_true')
 group1.add_argument("-v","--verbose",dest='verbose',help="Show more informations.",action='store_true')
 group2=parser.add_mutually_exclusive_group()
-group2.add_argument("-i","--ip",dest='ip',help="The camera's ip and port.Example: 192.168.1.100:80",type=str)
-group2.add_argument("-l","--list",dest='inputfile',help="The camera's ip:port address file. The file's format like this 192.168.1.100:80 in a line.",type=str)
-group2.add_argument("--shodan",dest='shodan',help="Your Shodan API Key.You can get help from https://www.shodan.io/",type=str)
-group2.add_argument("--zoomeye",dest='zoomeye',help="Your ZoomEye API Key.You can get help from https://www.zoomeye.org/api",type=str)
+group2.add_argument("-i","--ip",dest='ip',help="The camera's IP and port. Example: 192.168.1.100:80",type=str)
+group2.add_argument("-l","--list",dest='inputfile',help="The camera's IP:port address file. The file's format like this 192.168.1.100:80 in a line.",type=str)
+group2.add_argument("--shodan",dest='shodan',help="Your Shodan API Key. You can get help from https://www.shodan.io/",type=str)
+group2.add_argument("--zoomeye",dest='zoomeye',help="Your ZoomEye API Key. You can get help from https://www.zoomeye.org/api",type=str)
 
 args=parser.parse_args()
 
