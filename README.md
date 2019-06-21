@@ -66,7 +66,7 @@
 
 # How to execute entropy
 
-> entropy -h
+> entropy --help
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
