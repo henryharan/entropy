@@ -64,17 +64,9 @@
 
 > ./uninstall.sh
 
-# How to execute entropy (command)
+# How to execute entropy
 
 > entropy -h
-
-# How to execute entropy (python3)
-
-> cd entropy
-
-> python3 entropy.py -h
-
-# Entropy global usage
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
