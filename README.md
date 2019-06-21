@@ -30,7 +30,7 @@
  </a>
 </p>
 
-# Entropy credits
+# Entropy exploit credits
 
     Name    : Entropy Exploit
     Writer  : Entynetproject
