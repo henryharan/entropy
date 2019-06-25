@@ -41,51 +41,96 @@ sleep 1
 exit
 fi
 
-if [[ -d ~/entropy ]]
+if [[ -d ~/phonia ]]
 then
-cd ~/entropy/bin
+cd ~/phonia/bin
 {
-cp entropy /bin
-cp entropy /usr/local/bin
-chmod +x /bin/entropy
-chmod +x /usr/local/bin/entropy
-cd ~/entropy
+cp phonia /bin
+cp phonia /usr/local/bin
+chmod +x /bin/phonia
+chmod +x /usr/local/bin/phonia
+cd ~/phonia
 } &> /dev/null
+
+python3 lib/banner.py
+
+read -p $'Select your arch (amd/arm) ' CONF
 sleep 1
-clear
-sleep 1
-echo -e ""$N"Installing dependences..."$C""
+
+if [[ "$CONF" = "arm" ]]
+then
+if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
+then
+echo ""$BS"Installing dependences..."$CE""
+else 
+echo ""$BS"Installing dependences..."$CE""
+pkg update
+pkg install python3
+pkg install python3-pip
+fi
+fi
+
+if [[ "$CONF" = "amd" ]]
+then
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-pip3 install -r related.txt
+echo ""$BS"Installing dependences..."$CE""
 else
+echo ""$BS"Installing dependences..."$CE""
 apt-get update
+apt-get install python3
 apt-get install python3-pip
-pip3 install setuptools
-pip3 install -r related.txt
 fi
+fi
+
+cp config.example.py config.py
+pip3 install setuptools
+pip3 install -r requirements.txt
+
 else
 cd ~
 {
-git clone https://github.com/entynetproject/entropy.git
-cd ~/entropy/bin
-cp entropy /bin
-cp entropy /usr/local/bin
-chmod +x /bin/entropy
-chmod +x /usr/local/bin/entropy
-cd ~/entropy
+git clone https://github.com/entynetproject/phonia.git
+cd ~/phonia/bin
+cp phonia /bin
+cp phonia /usr/local/bin
+chmod +x /bin/phonia
+chmod +x /usr/local/bin/phonia
+cd ~/phonia
 } &> /dev/null
+
+python3 lib/banner.py
+
+read -p $'Select your arch (amd/arm) ' CONF
 sleep 1
-clear
-sleep 1
-echo -e ""$N"Installing dependences..."$C""
+
+if [[ "$CONF" = "arm" ]]
+then
+if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
+then
+echo ""$BS"Installing dependences..."$CE""
+else 
+echo ""$BS"Installing dependences..."$CE""
+pkg update
+pkg install python3
+pkg install python3-pip
+fi
+fi
+
+if [[ "$CONF" = "amd" ]]
+then
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-pip3 install -r related.txt
+echo ""$BS"Installing dependences..."$CE""
 else
+echo ""$BS"Installing dependences..."$CE""
 apt-get update
+apt-get install python3
 apt-get install python3-pip
-pip3 install setuptools
-pip3 install -r related.txt
 fi
+fi
+
+cp config.example.py config.py
+pip3 install setuptools
+pip3 install -r requirements.txt
 fi
