@@ -32,12 +32,12 @@
 
 # Entropy exploit credits
 
-    Name    : Entropy Exploit
-    Writer  : Entynetproject
-    Version : 1.0 (first release)
-    Exploit : CNVD-2017-02776
-    Github  : https://github.com/entynetproject
-    Site    : http://entynetproject.simplesite.com/
+    Name      : Entropy Exploit
+    Developer : Entynetproject
+    Version   : 1.0 (first release)
+    Exploit   : CNVD-2017-02776
+    Github    : https://github.com/entynetproject
+    Site      : http://entynetproject.simplesite.com/
 
 # About entropy exploit
 
