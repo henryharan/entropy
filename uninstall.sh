@@ -44,11 +44,21 @@ sleep 1
 exit
 fi
 
+sleep 1
+
+cd ~/entropy
+echo
+cat banner/banner.txt
+echo
+echo -e ""$R"Uninstalling Entropy Exploit..."$CE""
+sleep 1
+echo -e ""$R"Uninstalling installed dependences..."$CE""
+sleep 3
+
 {
 cd
 rm -r entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
 } &> /dev/null
-
 
