@@ -34,7 +34,7 @@
 
     Name      : Entropy Exploit
     Developer : Entynetproject
-    Version   : v1.0 (first release)
+    Version   : v1.7 (entropy-v1.7-dev)
     Exploit   : CNVD-2017-02776
     Site      : http://entynetproject.simplesite.com/
 
