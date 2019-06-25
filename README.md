@@ -37,7 +37,6 @@
     Version   : v1.0 (first release)
     Exploit   : CNVD-2017-02776
     Site      : http://entynetproject.simplesite.com/
-    API       : Automate Shodan/Zoomeye API
 
 # About entropy exploit
 
