@@ -475,7 +475,7 @@ def main():
     subprocess.Popen("clear",shell=True)
     fig=pyfiglet.Figlet('slant')
     HEADER=fig.renderText('      ENTROPY')
-    VERSION='version:1.0'
+    VERSION='version:1.7'
     WRITER='http://entynetproject.simplesite.com/'
     print(color.Headmagenta+HEADER+color.Endlwhites)
     print(color.Headmagenta+VERSION.center(70)+color.Endlwhites)
