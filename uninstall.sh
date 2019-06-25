@@ -22,9 +22,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+N="\033[1;37m"
+C="\033[0m"
+
 CE="\033[0m"
 RS="\033[1;31m"
 YS="\033[1;33m"
+BS="-e \033[34m"
+
+R="\033[31m"
 
 WHO="$( whoami )"
 
@@ -44,6 +50,5 @@ rm -r entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
 } &> /dev/null
-
 
 
