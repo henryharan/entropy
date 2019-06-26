@@ -474,7 +474,7 @@ def crack(tmp_ip_list):
 def main():
     subprocess.Popen("clear",shell=True)
     fig=pyfiglet.Figlet('slant')
-    HEADER=os.system("cat banner/banner.txt")
+    HEADER=os.system("cat banner/banner1.txt")
     VERSION='version:1.7'
     WRITER='http://entynetproject.simplesite.com/'
     print(color.Warnred+HEADER+color.Endlwhites)
