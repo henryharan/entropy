@@ -55,11 +55,9 @@ chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
 
-echo "$N"
 echo
 cat banner/banner.txt
 echo
-echo "$C"
 
 read -p $'Select your arch (amd/arm) ' CONF
 sleep 1
@@ -105,11 +103,9 @@ chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
 
-echo "N"
 echo
 cat banner/banner.txt
 echo
-echo "$C"
 
 read -p $'Select your arch (amd/arm) ' CONF
 sleep 1
