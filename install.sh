@@ -55,9 +55,11 @@ chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
 
+echo "$N"
 echo
 cat banner/banner.txt
 echo
+echo "$C"
 
 read -p $'Select your arch (amd/arm) ' CONF
 sleep 1
@@ -66,9 +68,9 @@ if [[ "$CONF" = "arm" ]]
 then
 if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
 then
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 else 
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 pkg update
 pkg install python3
 pkg install python3-pip
@@ -79,9 +81,9 @@ if [[ "$CONF" = "amd" ]]
 then
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 else
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 apt-get update
 apt-get install python3
 apt-get install python3-pip
@@ -103,9 +105,11 @@ chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
 
+echo "N"
 echo
 cat banner/banner.txt
 echo
+echo "$C"
 
 read -p $'Select your arch (amd/arm) ' CONF
 sleep 1
@@ -114,9 +118,9 @@ if [[ "$CONF" = "arm" ]]
 then
 if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
 then
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 else 
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 pkg update
 pkg install python3
 pkg install python3-pip
@@ -127,9 +131,9 @@ if [[ "$CONF" = "amd" ]]
 then
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 else
-echo ""$BS"Installing dependences..."$CE""
+echo -e ""$N"Installing dependences..."$CE""
 apt-get update
 apt-get install python3
 apt-get install python3-pip
