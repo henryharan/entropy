@@ -66,9 +66,9 @@ if [[ "$CONF" = "arm" ]]
 then
 if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
 then
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 else 
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 pkg update
 pkg install python3
 pkg install python3-pip
@@ -79,17 +79,19 @@ if [[ "$CONF" = "amd" ]]
 then
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 else
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 apt-get update
 apt-get install python3
 apt-get install python3-pip
 fi
 fi
 
+{
 pip3 install setuptools
 pip3 install -r related.txt
+} &> /dev/null
 
 else
 cd ~
@@ -114,9 +116,9 @@ if [[ "$CONF" = "arm" ]]
 then
 if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
 then
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 else 
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 pkg update
 pkg install python3
 pkg install python3-pip
@@ -127,15 +129,17 @@ if [[ "$CONF" = "amd" ]]
 then
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 else
-echo -e ""$N"Installing dependences..."$CE""
+echo ""$BS"Installing dependences..."$CE""
 apt-get update
 apt-get install python3
 apt-get install python3-pip
 fi
 fi
 
+{
 pip3 install setuptools
 pip3 install -r related.txt
+}
 fi
