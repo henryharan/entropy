@@ -74,7 +74,7 @@ if args.outputfile:
     logger.setLevel(logging.INFO)
 
 def handlesignal(signum,frame):
-    print(color.Mindyellow+"\nYou choose to stop exploiting!"+color.Endlwhites)
+    print(color.Mindyellow+"\n[-] You choose to stop exploiting!"+color.Endlwhites)
     sys.exit(0)
 
 class Color(object):
