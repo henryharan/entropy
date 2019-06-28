@@ -68,9 +68,9 @@
 > entropy -h
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
-               [-c COUNT] [-q | -v]
-               [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
-               [--update] [--info]
+                   [-c COUNT] [-q | -v]
+                   [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+                   [--update] [--info]
 
     Please use CNVD-2017-02776 exploit just in educational purposes!
 
