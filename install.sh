@@ -54,7 +54,7 @@ chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
-
+sleep 0.5
 echo
 cat banner/banner.txt
 echo
@@ -165,7 +165,7 @@ chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
-
+sleep 0.5
 echo
 cat banner/banner.txt
 echo
