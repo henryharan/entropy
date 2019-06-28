@@ -68,8 +68,9 @@
 > entropy -h
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
-                   [-c COUNT] [-q | -v]
-                   [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+               [-c COUNT] [-q | -v]
+               [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+               [--update] [--info]
 
     Please use CNVD-2017-02776 exploit just in educational purposes!
 
@@ -99,6 +100,8 @@
                             https://www.shodan.io/
       --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
                             https://www.zoomeye.org/api
+      -u, --update          Update Entropy Exploit.
+      --info                Show Entropy Exploit credits.
 
 # Entropy exploit examples
 
