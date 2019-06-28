@@ -486,11 +486,8 @@ def crack(tmp_ip_list):
 
 def main():
     subprocess.Popen("clear",shell=True)
-    fig=pyfiglet.Figlet('slant')
-    HEADER=HEADER=fig.renderText(' ENTROPY')
-    VERSION='version:1.7'
-    WRITER='http://entynetproject.simplesite.com/'
-    print(color.Endlwhites+HEADER+color.Endlwhites)
+    os.system("cat banner/banner.txt")
+    print("")
     if args.shodan:
         try:
             if args.brand==1:
