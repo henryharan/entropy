@@ -22,6 +22,47 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+#blue start 
+	BS="-e \033[34m"
+#color end
+	CE="\033[0m"
+#red start
+	RS="-e \033[31m"
+#green start
+	GNS="-e \033[32m"
+else
+#blue start 
+	BS="-e \e[0;34m"
+#color end
+	CE="\e[0m"
+#red start
+	RS="-e \e[0;31m"
+#green start
+	GNS="-e \e[0;32m"
+fi
+
+
+if [[ "$1" = "-u" || "$1" = "--update" ]]
+then
+sleep 1
+echo ""$BS"Installing update..."$CE""
+{
+rm -r ~/entropy
+rm /bin/entropy
+rm /usr/local/bin/entropy
+cd ~
+git clone https://github.com/entynetproject/entropy.git
+cd entropy
+chmod +x install.sh
+./install.sh
+} &> /dev/null
+echo ""$GNS"Successfully updated..."$CE""
+sleep 1
+exit
+fi
+
 cd
 if [[ -d ~/entropy ]]
 then
