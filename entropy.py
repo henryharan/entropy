@@ -43,6 +43,7 @@ except ImportError as e:
     print("[!] Because of this Entropy will be work incorrectly!")
     print("[!] You need to install dependences from related.txt!")
     print(" ")
+    
 
 TMP_PATH='/tmp/'
 
@@ -54,7 +55,7 @@ parser.add_argument("-t","--task",dest='tasks',help="Run TASKS number of connect
 parser.add_argument("-c","--count",dest='count',help="The number of IP you want to get from ZoomEye. The maximum is 2000. Default is 100.",default=100,type=int)
 group1=parser.add_mutually_exclusive_group()
 group1.add_argument("-q","--quiet",dest='quiet',help="Quiet mode.",action='store_true')
-group1.add_argument("-v","--verbose",dest='verbose',help="Show more information.",action='store_true')
+group1.add_argument("-v","--verbose",dest='verbose',help="Show more informations.",action='store_true')
 group2=parser.add_mutually_exclusive_group()
 group2.add_argument("-i","--ip",dest='ip',help="The camera's IP and port. Example: 192.168.1.100:80",type=str)
 group2.add_argument("-l","--list",dest='inputfile',help="The camera's IP:port address file. The file's format like this 192.168.1.100:80 in a line.",type=str)
@@ -484,10 +485,12 @@ def crack(tmp_ip_list):
         pass
 
 def main():
-    subprocess.Popen("clear",shell=True)
-    os.system("cat banner/banner.txt")
-    print(" ")
+    def sas():
+        subprocess.Popen("clear",shell=True)
+        os.system("cat banner/banner.txt")
+        print("")
     if args.shodan:
+        sas()
         try:
             if args.brand==1:
                 tmp_s=Scrapy(key=args.shodan,app='netwave')
@@ -499,8 +502,9 @@ def main():
                 crack(tmp_ip_list)
         except Exception as e:
             print("The error occured:",e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.zoomeye:
+        sas()
         try:
             p1,p2=divmod(args.count,20)
             page=p1
@@ -516,8 +520,9 @@ def main():
                 crack(tmp_ip_list)
         except Exception as e:
             print("The error occured:",e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.inputfile:
+        sas()
         try:
             tmp_ip_list = []
             with open(args.inputfile,'r') as f:
@@ -526,8 +531,9 @@ def main():
             crack(tmp_ip_list)
         except Exception as e:
             print("The error occured:%s"%e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.ip:
+        sas()
         try:
             ip=args.ip.split(':')[0]
             port=args.ip.split(':')[-1]
@@ -539,12 +545,16 @@ def main():
             inst.join()
         except Exception as e:
             print("The error occured:%s"%e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h or entropy -h for more help.")
     else:
-        print("Please use python3 entropy.py -h or entropy -h for more help")
+        os.system("cat banner/banner.txt")
+        print("")
+        print("Please use python3 entropy.py -h or entropy -h for more help.")
 
 if __name__=='__main__':
     try:
         main()
     except Exception:
-        print("Please use python3 entropy.py -h or entropy -h for more help")
+        os.system("cat banner/banner.txt")
+        print("")
+        print("Please use python3 entropy.py -h or entropy -h for more help.")
