@@ -487,7 +487,7 @@ def crack(tmp_ip_list):
 def main():
     subprocess.Popen("clear",shell=True)
     os.system("cat banner/banner.txt | head -n 8")
-   
+    print("")
     if args.shodan:
         try:
             if args.brand==1:
