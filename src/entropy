@@ -553,6 +553,5 @@ if __name__=='__main__':
     try:
         main()
     except Exception:
-        os.system(" cat banner/banner.txt")
-        print("")
+        sas()
         print("Please use python3 entropy.py -h or entropy -h for more help.")
