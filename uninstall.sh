@@ -48,7 +48,7 @@ sleep 0.5
 
 cd ~/entropy
 echo
-cat banner/banner.txt | head -n 8
+cat banner/banner.txt
 echo
 sleep 0.5
 echo -e ""$R"Uninstalling Entropy Exploit..."$CE""
