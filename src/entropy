@@ -545,12 +545,14 @@ def main():
             inst.join()
         except Exception as e:
             print("The error occured:%s"%e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h or entropy -h for more help.")
     else:
-        print("Please use python3 entropy.py -h or entropy -h for more help")
+        print("Please use python3 entropy.py -h or entropy -h for more help.")
 
 if __name__=='__main__':
     try:
         main()
     except Exception:
-        print("Please use python3 entropy.py -h or entropy -h for more help")
+        os.system(" cat banner/banner.txt")
+        print("")
+        print("Please use python3 entropy.py -h or entropy -h for more help.")
