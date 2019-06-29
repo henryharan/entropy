@@ -56,7 +56,7 @@ cd ~/entropy
 } &> /dev/null
 sleep 0.5
 echo
-cat banner/banner.txt
+cat banner/banner.txt | head -n 8
 echo
 
 if [[ -f /etc/entropy.d ]]
@@ -167,7 +167,7 @@ cd ~/entropy
 } &> /dev/null
 sleep 0.5
 echo
-cat banner/banner.txt
+cat banner/banner.txt | head -n 8
 echo
 
 if [[ -f /etc/entropy.d ]]
