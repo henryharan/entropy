@@ -547,11 +547,14 @@ def main():
             print("The error occured:%s"%e)
             print("Please use python3 entropy.py -h or entropy -h for more help.")
     else:
+        os.system("cat banner/banner.txt")
+        print("")
         print("Please use python3 entropy.py -h or entropy -h for more help.")
 
 if __name__=='__main__':
     try:
         main()
     except Exception:
-        sas()
+        os.system("cat banner/banner.txt")
+        print("")
         print("Please use python3 entropy.py -h or entropy -h for more help.")
