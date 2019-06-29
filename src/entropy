@@ -47,6 +47,7 @@ except ImportError as e:
 
 TMP_PATH='/tmp/'
 
+parser=argparse.ArgumentParser(description="Please use CNVD-2017-02776 exploit just in educational purposes!")
 parser.add_argument("-b","--brand",dest='brand',help="Choose the brand of IP Camera. 1 - represents Netwave, 2 - represents GoAhead.",choices=[1,2],type=int)
 parser.add_argument("-o","--output",dest='outputfile',help="Output into path you input. The default path in dir /tmp",type=str)
 parser.add_argument("-T","--timeout",dest='timeout',help="The default timeout for netwave is 300s.",type=int,default=300)
