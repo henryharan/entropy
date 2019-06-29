@@ -71,7 +71,7 @@ if args.update:
     sys.exit()
     
 if args.info:
-    os.system("cat banner/banner.txt")
+    os.system("cat banner/banner.txt | head -n 8")
     print("")
     os.system("cat banner/banner1.txt")
     sys.exit()
@@ -486,7 +486,7 @@ def crack(tmp_ip_list):
 
 def main():
     subprocess.Popen("clear",shell=True)
-    os.system("cat banner/banner.txt")
+    os.system("cat banner/banner.txt | head -n 8")
    
     if args.shodan:
         try:
