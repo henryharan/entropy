@@ -343,8 +343,8 @@ class GoAThread(threading.Thread):
             time.sleep(tmp_sleeptime)
             if os.stat(self.wget_out_path).st_size > 0:
                 if args.outputfile:
-                    logger.info(color.Defblue+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
-                print(color.Defblue+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
+                    logger.info(color.Sucgreen+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
+                print(color.Sucgreen+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
                 try:
                     pstr = subprocess.Popen(['strings', ], stdin=open(self.wget_out_path, 'r'),
                                             stdout=open(self.strings_out_path, 'w'))
