@@ -46,7 +46,7 @@ fi
 
 sleep 0.5
 
-cd ~/entropy
+cd /etc/entropy
 echo
 cat banner/banner.txt
 echo
@@ -57,8 +57,7 @@ echo -e ""$R"Uninstalling installed dependencies..."$CE""
 sleep 3
 
 {
-cd
-rm -r entropy
+rm -r /etc/entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
 } &> /dev/null
