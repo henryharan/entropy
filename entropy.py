@@ -68,13 +68,13 @@ parser.add_argument("--info",dest='info',help="Show Entropy Exploit credits.",ac
 args=parser.parse_args()
 
 if args.update:
-    os.system("cd && chmod +x entropy/bin/entropy && entropy/bin/entropy -u")
+    os.system("cd /etc && chmod +x entropy/bin/entropy && entropy/bin/entropy -u")
     sys.exit()
     
 if args.info:
-    os.system("cat banner/banner.txt")
+    os.system("cat /etc/entropy/banner/banner.txt")
     print("")
-    os.system("cat banner/banner1.txt")
+    os.system("cat /etc/entropy/banner/banner1.txt")
     sys.exit()
 
 if args.outputfile:
