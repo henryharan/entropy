@@ -44,15 +44,15 @@ sleep 1
 exit
 fi
 
-if [[ -d ~/entropy ]]
+if [[ -d /etc/entropy ]]
 then
-cd ~/entropy/bin
+cd /etc/entropy/bin
 {
 cp entropy /bin
 cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
-cd ~/entropy
+cd /etc/entropy
 } &> /dev/null
 sleep 0.5
 echo
@@ -155,15 +155,15 @@ pip3 install -r related.txt
 } &> /dev/null
 
 else
-cd ~
+cd /etc
 {
 git clone https://github.com/entynetproject/entropy.git
-cd ~/entropy/bin
+cd /etc/entropy/bin
 cp entropy /bin
 cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
-cd ~/entropy
+cd /etc/entropy
 } &> /dev/null
 sleep 0.5
 echo
