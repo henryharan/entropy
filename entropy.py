@@ -40,9 +40,9 @@ try:
     import shodan
     
 except ImportError as e:
-    print("[!] Failed to install some necessary dependences!")
+    print("[!] Failed to install some necessary dependencies!")
     print("[!] Because of this Entropy will be work incorrectly!")
-    print("[!] You need to install dependences from related.txt!")
+    print("[!] You need to install dependencies from related.txt!")
     print(" ")
     
 
