@@ -32,6 +32,7 @@ import threading
 import random
 import sys
 import signal
+import time
 try:
     import requests
     import tailer
@@ -306,15 +307,15 @@ class NWThread(threading.Thread):
                 self.memorydump(macaddr)
                 self.exploit()
                 if args.outputfile:
-                    logger.info("*"*50)
+                    logger.info()
                 if args.verbose:
-                    print("*"*50)
+                    time.sleep(0)
             else:
                 if args.outputfile:
                     logger.info(color.Defblue+"[-] The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port))
-                    logger.info("*"*50)
+                    logger.info()
                 print(color.Defblue+"[-] The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port))
-                print("*"*50)
+                time.sleep(0)
         except Exception:
             pass
 
@@ -418,8 +419,8 @@ class GoAThread(threading.Thread):
     def run(self):
         self.getInfo()
         if args.outputfile:
-            logger.info('*' * 50)
-        print('*' * 50)
+            logger.info()
+        time.sleep(0)
 
 class Scrapy(object):
     def __init__(self,key,app,page=None):
