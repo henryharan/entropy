@@ -63,7 +63,7 @@ sleep 1
 exit
 fi
 
-cd
+cd /etc
 if [[ -d /etc/entropy ]]
 then
 {
