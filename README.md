@@ -114,7 +114,7 @@
     
 > If you want to exploit cameras from database, run
 
-    entropy -b 2 -v --shodan [API key]
+    entropy -b 2 -v --shodan <API key>
 
 # Terms of use
 
