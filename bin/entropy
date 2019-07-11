@@ -49,10 +49,10 @@ then
 sleep 1
 echo ""$BS"Installing update..."$CE""
 {
-rm -r /etc/entropy
+rm -r ~/entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
-cd /etc
+cd ~
 git clone https://github.com/entynetproject/entropy.git
 cd entropy
 chmod +x install.sh
@@ -63,27 +63,27 @@ sleep 1
 exit
 fi
 
-cd /etc
-if [[ -d /etc/entropy ]]
+cd ~
+if [[ -d ~/entropy ]]
 then
 {
-cd /etc/entropy
+cd ~/entropy
 } &> /dev/null
-python3 /etc/entropy/src/entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
+python3 ~/entropy/src/entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
 else
 {
 ASESR="$( timeout -s SIGTERM 40 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
 } &> /dev/null
 if [[ "$ASESR" != "" ]]
 then 
-cd /etc
+cd ~
 {
 git clone https://github.com/entynetproject/entropy.git
-cd /etc/entropy
+cd ~/entropy
 } &> /dev/null
-python3 /etc/entropy/src/entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
+python3 ~/entropy/src/entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
 else
-cd /etc
+cd ~
 sleep 1
 exit
 fi

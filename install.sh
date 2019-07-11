@@ -44,25 +44,25 @@ sleep 1
 exit
 fi
 
-if [[ -d /etc/entropy ]]
+if [[ -d ~/entropy ]]
 then
-cd /etc/entropy/bin
+cd ~/entropy/bin
 {
 cp entropy /bin
 cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
-cd /etc/entropy
+cd ~/entropy
 } &> /dev/null
 sleep 0.5
 echo
 cat banner/banner.txt
 echo
 
-if [[ -f /etc/entropy.d ]]
+if [[ -f ~/entropy.d ]]
 then
 
-CONF="$( cat /etc/entropy.d )"
+CONF="$( cat ~/entropy.d )"
 
 if [[ "$CONF" = "arm" ]]
 then
@@ -106,7 +106,7 @@ fi
 else
 
 read -p $'Select your architecture (amd/intel/arm) ' CONF
-echo "$CONF" >> /etc/entropy.d
+echo "$CONF" >> ~/entropy.d
 sleep 1
 
 if [[ "$CONF" = "arm" ]]
@@ -155,25 +155,25 @@ pip3 install -r related.txt
 } &> /dev/null
 
 else
-cd /etc
+cd ~
 {
 git clone https://github.com/entynetproject/entropy.git
-cd /etc/entropy/bin
+cd ~/entropy/bin
 cp entropy /bin
 cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
-cd /etc/entropy
+cd ~/entropy
 } &> /dev/null
 sleep 0.5
 echo
 cat banner/banner.txt
 echo
 
-if [[ -f /etc/entropy.d ]]
+if [[ -f ~/entropy.d ]]
 then
 
-CONF="$( cat /etc/entropy.d )"
+CONF="$( cat ~/entropy.d )"
 
 if [[ "$CONF" = "arm" ]]
 then
@@ -217,7 +217,7 @@ fi
 else
 
 read -p $'Select your architecture (amd/intel/arm) ' CONF
-echo "$CONF" >> /etc/entropy.d
+echo "$CONF" >> ~/entropy.d
 sleep 1
 
 if [[ "$CONF" = "arm" ]]
