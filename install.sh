@@ -59,10 +59,10 @@ echo
 cat banner/banner.txt
 echo
 
-if [[ -f ~/entropy.d ]]
+if [[ -f /etc/entropy.d ]]
 then
 
-CONF="$( cat ~/entropy.d )"
+CONF="$( cat /etc/entropy.d )"
 
 if [[ "$CONF" = "arm" ]]
 then
@@ -106,7 +106,7 @@ fi
 else
 
 read -p $'Select your architecture (amd/intel/arm) ' CONF
-echo "$CONF" >> ~/entropy.d
+echo "$CONF" >> /etc/entropy.d
 sleep 1
 
 if [[ "$CONF" = "arm" ]]
@@ -170,10 +170,10 @@ echo
 cat banner/banner.txt
 echo
 
-if [[ -f ~/entropy.d ]]
+if [[ -f /etc/entropy.d ]]
 then
 
-CONF="$( cat ~/entropy.d )"
+CONF="$( cat /etc/entropy.d )"
 
 if [[ "$CONF" = "arm" ]]
 then
@@ -217,7 +217,7 @@ fi
 else
 
 read -p $'Select your architecture (amd/intel/arm) ' CONF
-echo "$CONF" >> ~/entropy.d
+echo "$CONF" >> /etc/entropy.d
 sleep 1
 
 if [[ "$CONF" = "arm" ]]
