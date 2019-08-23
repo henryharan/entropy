@@ -70,7 +70,7 @@
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
-                   [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+                   [-i IP | -l INPUTFILE | --shodan API | --zoomeye API]
                    [--update] [--info]
 
     optional arguments:
@@ -95,9 +95,9 @@
       -l INPUTFILE, --list INPUTFILE
                             The camera's IP:port address file. The file's format
                             like this 192.168.1.100:80 in a line.
-      --shodan SHODAN       Your Shodan API Key. You can get help from
+      --shodan API          Your Shodan API Key. You can get help from
                             https://www.shodan.io/
-      --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
+      --zoomeye API         Your ZoomEye API Key. You can get help from
                             https://www.zoomeye.org/api
       -u, --update          Update Entropy Exploit.
       --info                Show Entropy Exploit credits.
