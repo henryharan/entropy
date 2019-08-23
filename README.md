@@ -70,8 +70,8 @@
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
-                   [-i IP | -l INPUTFILE | --shodan API | --zoomeye API]
-                   [--update] [--info]
+                   [-i IP | -l INPUTFILE | --shodan API | --zoomeye API] [-u] 
+                   [--info]
 
     optional arguments:
       -h, --help            show this help message and exit
