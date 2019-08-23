@@ -60,8 +60,8 @@ group1.add_argument("-v","--verbose",dest='verbose',help="Show more informations
 group2=parser.add_mutually_exclusive_group()
 group2.add_argument("-i","--ip",dest='ip',help="The camera's IP and port. Example: 192.168.1.100:80",type=str)
 group2.add_argument("-l","--list",dest='inputfile',help="The camera's IP:port address file. The file's format like this 192.168.1.100:80 in a line.",type=str)
-group2.add_argument("--shodan",dest='shodan',help="Your Shodan API Key. You can get help from https://www.shodan.io/",type=str)
-group2.add_argument("--zoomeye",dest='zoomeye',help="Your ZoomEye API Key. You can get help from https://www.zoomeye.org/api",type=str)
+group2.add_argument("--shodan",dest='api',help="Your Shodan API Key. You can get help from https://www.shodan.io/",type=str)
+group2.add_argument("--zoomeye",dest='api',help="Your ZoomEye API Key. You can get help from https://www.zoomeye.org/api",type=str)
 parser.add_argument("-u","--update",dest='update',help="Update Entropy Exploit.",action='store_true')
 parser.add_argument("--info",dest='info',help="Show Entropy Exploit credits.",action='store_true')
 
