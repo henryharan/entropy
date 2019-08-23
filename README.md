@@ -104,7 +104,7 @@
 
 # Entropy exploit examples
 
-> If you want to exploit a local camera, run
+> If you want to exploit one camera, run
     
     entropy -b 1 -i <ip> -v  
     
@@ -112,9 +112,9 @@
 
     entropy -b 2 -l <file> -v
     
-> If you want to exploit cameras from database, run
+> If you want to exploit cameras using shodan, run
 
-    entropy -b 2 -v --shodan <shodan>
+    entropy -b 2 -v --shodan <api>
 
 # Terms of use
 
