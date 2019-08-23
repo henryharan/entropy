@@ -106,15 +106,15 @@
 
 > If you want to exploit a local camera, run
     
-    entropy -b 1 -i 192.168.1.100:80 -v  
+    entropy -b 1 -i <ip> -v  
     
 > If you want to exploit cameras from list, run
 
-    entropy -b 2 -l iplist.txt -v
+    entropy -b 2 -l <file> -v
     
 > If you want to exploit cameras from database, run
 
-    entropy -b 2 -v --shodan <API key>
+    entropy -b 2 -v --shodan <shodan>
 
 # Terms of use
 
