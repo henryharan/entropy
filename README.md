@@ -106,15 +106,15 @@
 
 > If you want to exploit one camera, run
     
-    entropy -b 1 -i IP -v  
+    entropy -b 1 -i <ip> -v  
     
 > If you want to exploit cameras from list, run
 
-    entropy -b 2 -l INPUTFILE -v
+    entropy -b 2 -l <list> -v
     
 > If you want to exploit cameras using shodan, run
 
-    entropy -b 2 -v --shodan API
+    entropy -b 2 -v --shodan <api>
 
 # Terms of use
 
