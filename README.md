@@ -70,8 +70,8 @@
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
-                   [-i IP | -l INPUTFILE | --shodan API | --zoomeye API] [-u] 
-                   [--info]
+                   [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+                   [--update] [--info]
 
     optional arguments:
       -h, --help            show this help message and exit
@@ -95,26 +95,26 @@
       -l INPUTFILE, --list INPUTFILE
                             The camera's IP:port address file. The file's format
                             like this 192.168.1.100:80 in a line.
-      --shodan API          Your Shodan API Key. You can get help from
+      --shodan SHODAN       Your Shodan API Key. You can get help from
                             https://www.shodan.io/
-      --zoomeye API         Your ZoomEye API Key. You can get help from
+      --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
                             https://www.zoomeye.org/api
       -u, --update          Update Entropy Exploit.
       --info                Show Entropy Exploit credits.
 
 # Entropy exploit examples
 
-> If you want to exploit one camera, run
+> If you want to exploit a local camera, run
     
-    entropy -b 1 -i <ip> -v  
+    entropy -b 1 -i 192.168.1.100:80 -v  
     
 > If you want to exploit cameras from list, run
 
-    entropy -b 2 -l <inputfile> -v
+    entropy -b 2 -l iplist.txt -v
     
-> If you want to exploit cameras using shodan, run
+> If you want to exploit cameras from database, run
 
-    entropy -b 2 -v --shodan <api>
+    entropy -b 2 -v --shodan <API key>
 
 # Terms of use
 
