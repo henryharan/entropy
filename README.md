@@ -110,7 +110,7 @@
     
 > If you want to exploit cameras from list, run
 
-    entropy -b 2 -l <list> -v
+    entropy -b 2 -l <inputfile> -v
     
 > If you want to exploit cameras using shodan, run
 
