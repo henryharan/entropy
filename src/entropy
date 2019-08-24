@@ -77,7 +77,7 @@ if args.info:
     os.system("cat ~/entropy/banner/banner1.txt")
     sys.exit()
 
-if args.outputfile:
+if args.output_file:
     logger = logging.getLogger()
     try:
         fh = logging.FileHandler(args.outputfile)
