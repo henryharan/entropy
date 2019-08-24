@@ -78,7 +78,7 @@
       -b {1,2}, --brand {1,2}
                             Choose the brand of IP Camera. 1 - represents Netwave,
                             2 - represents GoAhead.
-      -o OUTPUT_FILE, --output OUTPUT_FILE
+      -o OUTPUTFILE, --output OUTPUTFILE
                             Output into path you input. The default path in dir
                             /tmp
       -T TIMEOUT, --timeout TIMEOUT
@@ -92,7 +92,7 @@
       -q, --quiet           Quiet mode.
       -v, --verbose         Show more informations.
       -i IP, --ip IP        The camera's IP and port. Example: 192.168.1.100:80
-      -in INPUT_FILE, --input INPUT_FILE
+      -l INPUTFILE, --list INPUTFILE
                             The camera's IP:port address file. The file's format
                             like this 192.168.1.100:80 in a line.
       --shodan API          Your Shodan API Key. You can get help from
@@ -110,7 +110,7 @@
     
 > If you want to exploit cameras from list, run
 
-    entropy -b 2 -l INPUTFILE -o OUTPUTFILE -v
+    entropy -b 2 -l INPUTFILE -v
     
 > If you want to exploit cameras using shodan, run
 
