@@ -68,9 +68,9 @@
 
 > entropy -h
 
-    usage: entropy [-h] [-b {1,2}] [-o OUTPUT_FILE] [-T TIMEOUT] [-t TASKS]
+    usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
-                   [-i IP | -in INPUT_FILE | --shodan API | --zoomeye API] [-u] 
+                   [-i IP | -l INPUTFILE | --shodan API | --zoomeye API] [-u] 
                    [--info]
 
     optional arguments:
