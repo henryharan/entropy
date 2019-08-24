@@ -80,9 +80,9 @@ if args.info:
 if args.output_file:
     logger = logging.getLogger()
     try:
-        fh = logging.FileHandler(args.outputfile)
+        fh = logging.FileHandler(args.output_file)
     except Exception:
-        fh=logging.FileHandler(TMP_PATH+args.outputfile)
+        fh=logging.FileHandler(TMP_PATH+args.output_file)
     logger.addHandler(fh)
     logger.setLevel(logging.INFO)
 
