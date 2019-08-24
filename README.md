@@ -70,7 +70,7 @@
 
     usage: entropy [-h] [-b {1,2}] [-o OUTPUT_FILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
-                   [-i IP | -l INPUT_FILE | --shodan API | --zoomeye API] [-u] 
+                   [-i IP | -in INPUT_FILE | --shodan API | --zoomeye API] [-u] 
                    [--info]
 
     optional arguments:
@@ -92,7 +92,7 @@
       -q, --quiet           Quiet mode.
       -v, --verbose         Show more informations.
       -i IP, --ip IP        The camera's IP and port. Example: 192.168.1.100:80
-      -l INPUT_FILE, --list INPUT_FILE
+      -in INPUT_FILE, --input INPUT_FILE
                             The camera's IP:port address file. The file's format
                             like this 192.168.1.100:80 in a line.
       --shodan API          Your Shodan API Key. You can get help from
@@ -110,7 +110,7 @@
     
 > If you want to exploit cameras from list, run
 
-    entropy -b 2 -l INPUT_FILE -o OUTPUT_FILE -v
+    entropy -b 2 -in INPUT_FILE -o OUTPUT_FILE -v
     
 > If you want to exploit cameras using shodan, run
 
