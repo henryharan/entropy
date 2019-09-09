@@ -43,7 +43,7 @@
 
     INFO: Entropy Exploit is an IP webcamera 
     exploit also named CNVD-2017-02776, this is 
-    powerful exploitation tool for webcams testing!
+    powerful exploitation tool for webcams testing.
 
 # How to install entropy
 
