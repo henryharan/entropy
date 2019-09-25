@@ -14,7 +14,7 @@
   <a href="https://github.com/entynetproject/entropy/releases">
     <img src="https://img.shields.io/github/release/entynetproject/entropy.svg">
   </a>
-  <a href="https://ru.m.wikipedia.org/wiki/Python">
+  <a href="https://wikipedia.org/wiki/Python_(programming_language)">
     <img src="https://img.shields.io/badge/language-python-blue.svg">
  </a>
   <a href="https://exploit-db.com/">
@@ -26,7 +26,7 @@
   <a href="https://github.com/entynetproject/entropy/wiki">
       <img src="https://img.shields.io/badge/wiki%20-entropy-lightgrey.svg">
  </a>
-  <a href="https://mobile.twitter.com/entynetproject">
+  <a href="https://twitter.com/entynetproject">
     <img src="https://img.shields.io/badge/twitter-entynetproject-blue.svg">
  </a>
 </p>
