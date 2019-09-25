@@ -17,7 +17,7 @@
   <a href="https://wikipedia.org/wiki/Python_(programming_language)">
     <img src="https://img.shields.io/badge/language-python-blue.svg">
  </a>
-  <a href="https://exploit-db.com/">
+  <a href="https://github.com/entynetproject/entropy">
       <img src="https://img.shields.io/badge/exploit-CNVD-red.svg?maxAge=2592000">
  </a>
   <a href="https://github.com/entynetproject/entropy/issues?q=is%3Aissue+is%3Aclosed">
