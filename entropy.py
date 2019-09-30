@@ -43,7 +43,7 @@ except ImportError as e:
     print("[!] Failed to install some necessary dependencies!")
     print("[!] Because of this Entropy will be work incorrectly!")
     print("[!] You need to install dependencies from related.txt!")
-    print(" ")
+    print("")
     
 
 TMP_PATH='/tmp/'
