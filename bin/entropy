@@ -49,6 +49,8 @@ then
 sleep 1
 echo ""$BS"Installing update..."$CE""
 {
+mkdir ~/.entropy
+cp -r ~/entropy/RECHECK ~/.entropy
 rm -r ~/entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
@@ -57,6 +59,8 @@ git clone https://github.com/entynetproject/entropy.git
 cd entropy
 chmod +x install.sh
 ./install.sh
+cp -r ~/.entropy/RECHECK ~/entropy
+rm -r ~/.entropy
 } &> /dev/null
 echo ""$GNS"Successfully updated..."$CE""
 sleep 1
