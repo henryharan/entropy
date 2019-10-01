@@ -26,6 +26,21 @@ import argparse
 import time
 import subprocess
 import os
+
+os.system("""
+if [[ -d ~/entropy ]]
+then
+sleep 0
+else
+cd ~
+{
+git clone https://github.com/entynetproject/entropy.git
+} &> /dev/null
+fi
+""")
+
+os.chdir("~/entropy")
+
 import logging
 import shlex
 import threading
