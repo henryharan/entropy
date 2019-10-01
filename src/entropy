@@ -83,13 +83,13 @@ parser.add_argument("--info",dest='info',help="Show Entropy Exploit credits.",ac
 args=parser.parse_args()
 
 if args.update:
-    os.system("chmod +x bin/entropy && bin/entropy -u")
+    os.system("cd ~/entropy && chmod +x bin/entropy && bin/entropy -u")
     sys.exit()
     
 if args.info:
-    os.system("cat banner/banner.txt")
+    os.system("cat ~/entropy/banner/banner.txt")
     print("")
-    os.system("cat banner/banner1.txt")
+    os.system("cat ~/entropy/banner/banner1.txt")
     sys.exit()
 
 if args.outputfile:
@@ -503,7 +503,7 @@ def crack(tmp_ip_list):
 def main():
     def sas():
         subprocess.Popen("clear",shell=True)
-        os.system("cat banner/banner.txt")
+        os.system("cat ~/entropy/banner/banner.txt")
         print("")
     if args.shodan:
         sas()
@@ -563,7 +563,7 @@ def main():
             print("The error occured:%s"%e)
             print("Please use python3 entropy.py -h or entropy -h for more help.")
     else:
-        os.system("cat banner/banner.txt")
+        os.system("cat ~/entropy/banner/banner.txt")
         print("")
         print("Please use python3 entropy.py -h or entropy -h for more help.")
 
@@ -571,6 +571,6 @@ if __name__=='__main__':
     try:
         main()
     except Exception:
-        os.system("cat banner/banner.txt")
+        os.system("cat ~/entropy/banner/banner.txt")
         print("")
         print("Please use python3 entropy.py -h or entropy -h for more help.")
