@@ -39,7 +39,7 @@ git clone https://github.com/entynetproject/entropy.git
 fi
 """)
 
-os.chdir("~/entropy")
+os.chdir(os.path.expanduser("~/entropy"))
 
 import logging
 import shlex
