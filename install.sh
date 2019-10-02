@@ -106,7 +106,12 @@ fi
 else
 
 read -p $'Select your architecture (amd/intel/arm) ' CONF
+if [[ "$CONF" = "" ]]
+then
+exit
+else
 echo "$CONF" >> /etc/entropy.d
+fi
 sleep 1
 
 if [[ "$CONF" = "arm" ]]
@@ -217,7 +222,12 @@ fi
 else
 
 read -p $'Select your architecture (amd/intel/arm) ' CONF
+if [[ "$CONF" = "" ]]
+then
+exit
+else
 echo "$CONF" >> /etc/entropy.d
+fi
 sleep 1
 
 if [[ "$CONF" = "arm" ]]
