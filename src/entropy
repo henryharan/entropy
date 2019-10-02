@@ -37,7 +37,7 @@ echo "git clone https://github.com/entynetproject/entropy.git" >> .check.sh
 echo "} &> /dev/null" >> .check.sh
 echo "fi" >> .check.sh
 chmod +x .check.sh
-./check.sh
+./.check.sh
 rm .check.sh""")
 
 os.chdir(os.path.expanduser("~/entropy"))
