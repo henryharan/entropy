@@ -26,9 +26,6 @@ import argparse
 import time
 import subprocess
 import os
-
-os.chdir(os.path.expanduser("~/entropy"))
-
 import logging
 import shlex
 import threading
