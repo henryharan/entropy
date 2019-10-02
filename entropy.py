@@ -27,17 +27,17 @@ import time
 import subprocess
 import os
 
-os.system("""
-if [[ -d ~/entropy ]]
-then
-sleep 0
-else
-cd ~
-{
-git clone https://github.com/entynetproject/entropy.git
-} &> /dev/null
-fi
-""")
+os.system("""echo "if [[ -d ~/entropy ]]" >> .check.sh
+echo "then" >> .check.sh
+echo "sleep 0" >> .check.sh
+echo "else" >> .check.sh
+echo "cd ~" >> .check.sh
+echo "{" >> .check.sh
+echo "git clone https://github.com/entynetproject/entropy.git" >> .check.sh
+echo "} &> /dev/null" >> .check.sh
+echo "fi" >> .check.sh
+chmod +x .check.sh
+./check.sh""")
 
 os.chdir(os.path.expanduser("~/entropy"))
 
