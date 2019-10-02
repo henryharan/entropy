@@ -43,6 +43,7 @@ else
 	GNS="-e \e[0;32m"
 fi
 
+printf '\033]2;Entropy Exploit\a'
 
 if [[ "$1" = "-u" || "$1" = "--update" ]]
 then
@@ -92,4 +93,3 @@ sleep 1
 exit
 fi
 fi
-
