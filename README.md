@@ -1,4 +1,4 @@
-# Entropy Exploit (Webcam Exploit)
+# Entropy Exploit
 
                   __                        
       ___  ____  / /__________  ____  __  __    ___
@@ -71,7 +71,7 @@
     usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
                    [-c COUNT] [-q | -v]
                    [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
-                   [--update] [--info]
+                   [--update] [--details]
 
     optional arguments:
       -h, --help            show this help message and exit
@@ -100,7 +100,7 @@
       --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
                             https://www.zoomeye.org/api
       -u, --update          Update Entropy Exploit.
-      --info                Show Entropy Exploit details.
+      --details             Show Entropy Exploit details.
 
 # Entropy exploit examples
 
