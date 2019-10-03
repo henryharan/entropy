@@ -100,7 +100,6 @@
       --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
                             https://www.zoomeye.org/api
       -u, --update          Update Entropy Exploit.
-      --details             Show Entropy Exploit details.
 
 # Entropy exploit examples
 
