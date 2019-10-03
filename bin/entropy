@@ -57,9 +57,12 @@ rm /bin/entropy
 rm /usr/local/bin/entropy
 cd ~
 git clone https://github.com/entynetproject/entropy.git
-cd entropy
-chmod +x install.sh
-./install.sh
+cd entropy/bin
+cp entropy /bin
+cp entropy /usr/local/bin
+chmod +x /bin/entropy
+chmod +x /usr/local/bin/entropy
+cd ~/entropy
 cp -r ~/.entropy/RECHECK ~/entropy
 rm -r ~/.entropy
 } &> /dev/null
