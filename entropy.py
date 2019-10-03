@@ -489,12 +489,12 @@ def crack(tmp_ip_list):
         pass
 
 def main():
-    def sas():
+    def bundle():
         subprocess.Popen("clear",shell=True)
         os.system("cat banner/banner.txt")
         print("")
     if args.shodan:
-        sas()
+        bundle()
         try:
             if args.brand==1:
                 tmp_s=Scrapy(key=args.shodan,app='netwave')
@@ -508,7 +508,7 @@ def main():
             print("The error occured:",e)
             print("Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.zoomeye:
-        sas()
+        bundle()
         try:
             p1,p2=divmod(args.count,20)
             page=p1
@@ -526,7 +526,7 @@ def main():
             print("The error occured:",e)
             print("Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.inputfile:
-        sas()
+        bundle()
         try:
             tmp_ip_list = []
             with open(args.inputfile,'r') as f:
@@ -537,7 +537,7 @@ def main():
             print("The error occured:%s"%e)
             print("Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.ip:
-        sas()
+        bundle()
         try:
             ip=args.ip.split(':')[0]
             port=args.ip.split(':')[-1]
