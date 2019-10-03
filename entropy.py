@@ -22,12 +22,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-print "\033]2;Entropy Exploit\a"
+import os
+
+os.system("print '\033]2;Entropy Exploit\a'")
 
 import argparse
 import time
 import subprocess
-import os
 import logging
 import shlex
 import threading
