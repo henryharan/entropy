@@ -118,7 +118,14 @@
 
 # Exploit resources
 
-**CNVD-2017-02776** - ![View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-01037)
+    INFO: Here you can find different webcam 
+    exploits used in the Entropy Exploit.
+
+**CNVD-2017-02776** - [View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-02776)
+
+**CNVD-2017-01037** - [View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-01037)
+
+**CVE-2017-8224** - [View Exploit](https://www.cvedetails.com/cve/CVE-2017-8224/)
 
 # Terms of use
 
