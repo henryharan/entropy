@@ -66,18 +66,11 @@ group2.add_argument("-l","--list",dest='inputfile',help="The camera's IP:port ad
 group2.add_argument("--shodan",dest='shodan',help="Your Shodan API Key. You can get help from https://www.shodan.io/",type=str)
 group2.add_argument("--zoomeye",dest='zoomeye',help="Your ZoomEye API Key. You can get help from https://www.zoomeye.org/api",type=str)
 parser.add_argument("-u","--update",dest='update',help="Update Entropy Exploit.",action='store_true')
-parser.add_argument("--details",dest='details',help="Show Entropy Exploit details.",action='store_true')
 
 args=parser.parse_args()
 
 if args.update:
     os.system("chmod +x bin/entropy && bin/entropy -u")
-    sys.exit()
-    
-if args.details:
-    os.system("cat banner/banner.txt")
-    print("")
-    os.system("cat banner/banner1.txt")
     sys.exit()
 
 if args.outputfile:
