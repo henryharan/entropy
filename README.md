@@ -31,14 +31,6 @@
  </a>
 </p>
 
-# Entropy exploit details
-
-    Name      : Entropy Exploit
-    Developer : Entynetproject
-    Version   : v1.7 (entropy-v1.7-dev)
-    Exploit   : CNVD-2017-01037
-    Site      : http://entynetproject.simplesite.com/
-
 # About entropy exploit
 
     INFO: Entropy Exploit is an IP webcam exploit also named Netwave and 
