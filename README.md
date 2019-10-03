@@ -36,7 +36,7 @@
     Name      : Entropy Exploit
     Developer : Entynetproject
     Version   : v1.7 (entropy-v1.7-dev)
-    Exploit   : CNVD-2017-02776
+    Exploit   : Netwave and GoAhead IP Camera
     Site      : http://entynetproject.simplesite.com/
 
 # About entropy exploit
