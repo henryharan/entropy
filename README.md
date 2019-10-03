@@ -1,4 +1,4 @@
-# Entropy Exploit (CNVD-2017-02776)
+# Entropy Exploit (Webcam Exploit)
 
                   __                        
       ___  ____  / /__________  ____  __  __    ___
