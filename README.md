@@ -116,10 +116,9 @@
 
     entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
-# Exploit resources
+# Entropy exploit resources
 
-    INFO: Here you can find different webcam 
-    exploits used in the Entropy Exploit.
+    INFO: This is an exploit used in Entropy Exploit.
 
 **CNVD-2017-01037** - `Netwave and GoAhead IP Camera exploit` [View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-01037)
 
