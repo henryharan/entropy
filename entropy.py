@@ -24,7 +24,7 @@
 
 import os
 
-os.system("print '\033]2;Entropy Exploit\a'")
+os.system("printf '\033]2;Entropy Exploit\a'")
 
 import argparse
 import time
