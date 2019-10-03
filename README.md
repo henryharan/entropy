@@ -31,7 +31,7 @@
  </a>
 </p>
 
-# Entropy exploit credits
+# Entropy exploit details
 
     Name      : Entropy Exploit
     Developer : Entynetproject
@@ -41,9 +41,9 @@
 
 # About entropy exploit
 
-    INFO: Entropy Exploit is an IP webcam exploit 
-    also named CNVD-2017-02776, this is a powerful 
-    exploitation tool for webcams testing.
+    INFO: Entropy Exploit is an IP webcam exploit also named 
+    Netwave and GoAhead IP Camera exploit. Entropy is a powerful 
+    exploitation tool for webcams penetration testing.
 
 # How to install entropy
 
@@ -100,7 +100,7 @@
       --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
                             https://www.zoomeye.org/api
       -u, --update          Update Entropy Exploit.
-      --info                Show Entropy Exploit credits.
+      --info                Show Entropy Exploit details.
 
 # Entropy exploit examples
 
