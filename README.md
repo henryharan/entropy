@@ -116,6 +116,10 @@
 
     entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
+# Exploit resources
+
+**CNVD-2017-02776** - ![View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-01037)
+
 # Terms of use
 
     This tool is only for educational purposes only.
