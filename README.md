@@ -121,7 +121,7 @@
     INFO: Here you can find different webcam 
     exploits used in the Entropy Exploit.
 
-**CNVD-2017-01037** - [View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-01037)
+**CNVD-2017-01037** - `Netwave and GoAhead IP Camera exploit` [View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-01037)
 
 # Terms of use
 
