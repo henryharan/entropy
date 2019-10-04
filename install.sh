@@ -272,7 +272,7 @@ fi
 
 {
 pip3 install setuptools
-pip3 install -r related.txt
+pip3 install -r requirements.txt
 } &> /dev/null
 
 fi
