@@ -1,4 +1,4 @@
-# Entropy Exploit (Webcam Exploit)
+# Entropy Exploit
 
                   __                        
       ___  ____  / /__________  ____  __  __    ___
