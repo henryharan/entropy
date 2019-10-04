@@ -43,10 +43,12 @@ try:
     import shodan
     
 except ImportError as e:
-    print("[!] Failed to install some necessary dependencies!")
-    print("[!] Because of this Entropy will be work incorrectly!")
-    print("[!] You need to install dependencies from related.txt!")
-    print("")
+    Warl = '\033[31m'
+    Endl = '\033[0m'
+    print(Warl + "[!] Failed to install some necessary dependencies!")
+    print(Warl + "[!] Because of this Entropy will be work incorrectly!")
+    print(Warl + "[!] You can install dependencies from requirements.txt!")
+    print(Endl)
     
 
 TMP_PATH='/tmp/'
