@@ -1,4 +1,4 @@
-# Entropy Exploit (CNVD-2017-01037)
+# Entropy Exploit (Webcam Exploit)
 
                   __                        
       ___  ____  / /__________  ____  __  __    ___
@@ -33,9 +33,9 @@
 
 # About entropy exploit
 
-    INFO: Entropy Exploit is an IP webcam exploit also named Netwave and 
-    GoAhead IP Camera exploit or just CNVD-2017-01037 exploit. Entropy 
-    is a powerful exploitation tool for webcams penetration testing.
+    INFO: Entropy Exploit is an IP webcam exploit also named 
+    Netwave and GoAhead IP Camera exploit. Entropy is a powerful 
+    exploitation tool for webcams penetration testing.
 
 # How to install entropy
 
@@ -106,12 +106,6 @@
 > Example of the exploiting cameras using shodan
 
     entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
-
-# Entropy exploit resources
-
-    INFO: This is an exploit used in Entropy Exploit.
-
-**CNVD-2017-01037** - `Netwave and GoAhead IP Camera exploit` [View Exploit](https://www.cnvd.org.cn/flaw/show/CNVD-2017-01037)
 
 # Terms of use
 
