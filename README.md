@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/language-python-blue.svg">
  </a>
   <a href="https://github.com/entynetproject/entropy">
-      <img src="https://img.shields.io/badge/exploit-CNVD-red.svg?maxAge=2592000">
+      <img src="https://img.shields.io/badge/exploit-webcam-red.svg?maxAge=2592000">
  </a>
   <a href="https://github.com/entynetproject/entropy/issues?q=is%3Aissue+is%3Aclosed">
       <img src="https://img.shields.io/github/issues/entynetproject/entropy.svg">
