@@ -59,10 +59,10 @@ echo
 cat banner/banner.txt
 echo
 
-if [[ -f /etc/entropy.d ]]
+if [[ -f /etc/entropy.conf ]]
 then
 
-CONF="$( cat /etc/entropy.d )"
+CONF="$( cat /etc/entropy.conf )"
 
 if [[ "$CONF" = "arm" ]]
 then
@@ -110,7 +110,7 @@ if [[ "$CONF" = "" ]]
 then
 exit
 else
-echo "$CONF" >> /etc/entropy.d
+echo "$CONF" >> /etc/entropy.conf
 fi
 sleep 1
 
@@ -175,10 +175,10 @@ echo
 cat banner/banner.txt
 echo
 
-if [[ -f /etc/entropy.d ]]
+if [[ -f /etc/entropy.conf ]]
 then
 
-CONF="$( cat /etc/entropy.d )"
+CONF="$( cat /etc/entropy.conf )"
 
 if [[ "$CONF" = "arm" ]]
 then
@@ -226,7 +226,7 @@ if [[ "$CONF" = "" ]]
 then
 exit
 else
-echo "$CONF" >> /etc/entropy.d
+echo "$CONF" >> /etc/entropy.conf
 fi
 sleep 1
 
