@@ -32,16 +32,10 @@ BS="-e \033[34m"
 
 R="\033[31m"
 
-WHO="$( whoami )"
-
-if [[ "$WHO" != "root" ]]
+if [[ $EUID -ne 0 ]]
 then
-sleep 1
-echo -e "$RS"run it as"$CE" "$YS"root"$CE"
-sleep 1
-echo -e "$RS"or use"$CE" "$YS"sudo"$CE"
-sleep 1
-exit
+   echo "["$RS"*"$CE"] "$RS"This script must be run as "$YS"root"$C"" 1>&2
+   exit
 fi
 
 if [[ -d ~/entropy ]]
