@@ -63,6 +63,7 @@ if [[ -f /etc/entropy.conf ]]
 then
 
 CONF="$( cat /etc/entropy.conf )"
+sleep 1
 
 if [[ "$CONF" = "arm" ]]
 then
@@ -179,6 +180,7 @@ if [[ -f /etc/entropy.conf ]]
 then
 
 CONF="$( cat /etc/entropy.conf )"
+sleep 1
 
 if [[ "$CONF" = "arm" ]]
 then
