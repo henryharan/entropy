@@ -46,8 +46,6 @@ cat banner/banner.txt
 echo
 sleep 0.5
 echo -e ""$R"Uninstalling Entropy Exploit..."$CE""
-sleep 1
-echo -e ""$R"Uninstalling installed dependencies..."$CE""
 sleep 3
 
 {
