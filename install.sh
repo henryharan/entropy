@@ -100,7 +100,7 @@ fi
 
 else
 
-read -p $'Select your architecture (amd/intel/arm) ' CONF
+read -p $'Select your architecture (amd/intel/arm): ' CONF
 if [[ "$CONF" = "" ]]
 then
 exit
@@ -217,7 +217,7 @@ fi
 
 else
 
-read -p $'Select your architecture (amd/intel/arm) ' CONF
+read -p $'Select your architecture (amd/intel/arm): ' CONF
 if [[ "$CONF" = "" ]]
 then
 exit
