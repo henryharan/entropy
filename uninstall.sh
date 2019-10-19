@@ -34,7 +34,7 @@ R="\033[31m"
 
 if [[ $EUID -ne 0 ]]
 then
-   echo "["$RS"*"$CE"] "$RS"This script must be run as "$YS"root"$CE"" 1>&2
+   echo -e "["$RS"*"$CE"] "$RS"This script must be run as "$YS"root"$CE"" 1>&2
    exit
 fi
 
