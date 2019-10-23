@@ -40,21 +40,8 @@ then
    exit
 fi
 
-sleep 0.5
-clear
-sleep 0.5
-
-cd ~/entropy
-echo
-cat banner/banner.txt
-echo
-sleep 0.5
-echo -e ""$R"Uninstalling Entropy Exploit..."$CE""
-
 {
 rm -r ~/entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
 } &> /dev/null
-sleep 3
-cd
