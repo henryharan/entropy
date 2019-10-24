@@ -44,145 +44,27 @@ if [[ -d ~/entropy ]]
 then
 cd ~/entropy/bin
 {
-cp entropy /bin
 cp entropy /usr/local/bin
-chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
-cd ~/entropy
+cp entropy /bin
+chmod +x /bin/entropy
 } &> /dev/null
-sleep 0.5
-clear
-sleep 0.5
-echo
-cat banner/banner.txt
-echo
-
-if [[ -f /etc/entropy.conf ]]
-then
-
-CONF="$( cat /etc/entropy.conf )"
-sleep 1
-
-if [[ "$CONF" = "arm" ]]
-then
-if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
-then
-echo ""$BS"Installing dependencies..."$CE""
-else 
-echo ""$BS"Installing dependencies..."$CE""
-pkg update
-pkg install python3
-pkg install python3-pip
-fi
-fi
-
-if [[ "$CONF" = "amd" ]]
-then
-if [[ -d /System/Library/CoreServices/Finder.app ]]
-then
-echo ""$BS"Installing dependencies..."$CE""
-else
-echo ""$BS"Installing dependencies..."$CE""
-apt-get update
-apt-get install python3
-apt-get install python3-pip
-fi
-fi
-
-if [[ "$CONF" = "intel" ]]
-then
-if [[ -d /System/Library/CoreServices/Finder.app ]]
-then
-echo ""$BS"Installing dependencies..."$CE""
-else
-echo ""$BS"Installing dependencies..."$CE""
-apt-get update
-apt-get install python3
-apt-get install python3-pip
-fi
-fi
-
-else
-
-read -e -p $'Select your architecture (amd/intel/arm): ' CONF
-if [[ "$CONF" = "" ]]
-then
-exit
-else
-if [[ "$CONF" = "arm" ]]
-then
-read -e -p $'Is this a single board computer (yes/no)? ' PI
-if [[ "$PI" = "yes" ]]
-then
-echo "amd" >> /etc/entropy.conf
-CONF="amd"
-else
-echo "$CONF" >> /etc/entropy.conf
-fi
-fi
-fi
-sleep 1
-
-if [[ "$CONF" = "arm" ]]
-then
-if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
-then
-echo ""$BS"Installing dependencies..."$CE""
-else 
-echo ""$BS"Installing dependencies..."$CE""
-pkg update
-pkg install python3
-pkg install python3-pip
-fi
-fi
-
-if [[ "$CONF" = "amd" ]]
-then
-if [[ -d /System/Library/CoreServices/Finder.app ]]
-then
-echo ""$BS"Installing dependencies..."$CE""
-else
-echo ""$BS"Installing dependencies..."$CE""
-apt-get update
-apt-get install python3
-apt-get install python3-pip
-fi
-fi
-
-if [[ "$CONF" = "intel" ]]
-then
-if [[ -d /System/Library/CoreServices/Finder.app ]]
-then
-echo ""$BS"Installing dependencies..."$CE""
-else
-echo ""$BS"Installing dependencies..."$CE""
-apt-get update
-apt-get install python3
-apt-get install python3-pip
-fi
-fi
-fi
-
-{
-pip3 install setuptools
-pip3 install -r related.txt
-} &> /dev/null
-
 else
 cd ~
 {
 git clone https://github.com/entynetproject/entropy.git
 cd ~/entropy/bin
-cp entropy /bin
 cp entropy /usr/local/bin
-chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
-cd ~/entropy
+cp entropy /bin
+chmod +x /bin/entropy
 } &> /dev/null
+fi
 sleep 0.5
 clear
 sleep 0.5
-echo
+echo  
+cd ~/entropy
 cat banner/banner.txt
 echo
 
@@ -232,7 +114,6 @@ fi
 fi
 
 else
-
 read -e -p $'Select your architecture (amd/intel/arm): ' CONF
 if [[ "$CONF" = "" ]]
 then
@@ -278,7 +159,7 @@ apt-get install python3-pip
 fi
 fi
 
-if [[ "$CONF" = "amd" ]]
+if [[ "$CONF" = "intel" ]]
 then
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
@@ -296,5 +177,3 @@ fi
 pip3 install setuptools
 pip3 install -r requirements.txt
 } &> /dev/null
-
-fi
