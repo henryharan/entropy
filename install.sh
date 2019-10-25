@@ -48,6 +48,8 @@ cp entropy /usr/local/bin
 chmod +x /usr/local/bin/entropy
 cp entropy /bin
 chmod +x /bin/entropy
+cp entropy /data/data/com.termux/files/usr/bin
+chmod +x /data/data/com.termux/files/usr/bin/entropy
 } &> /dev/null
 else
 cd ~
@@ -58,6 +60,8 @@ cp entropy /usr/local/bin
 chmod +x /usr/local/bin/entropy
 cp entropy /bin
 chmod +x /bin/entropy
+cp entropy /data/data/com.termux/files/usr/bin
+chmod +x /data/data/com.termux/files/usr/bin/entropy
 } &> /dev/null
 fi
 sleep 0.5
