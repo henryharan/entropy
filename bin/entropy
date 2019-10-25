@@ -65,14 +65,9 @@ rm /usr/local/bin/entropy
 rm /data/data/com.termux/files/usr/bin/entropy
 cd ~
 git clone https://github.com/entynetproject/entropy.git
-cd entropy/bin
-cp entropy /bin
-cp entropy /usr/local/bin
-cp entropy /data/data/com.termux/files/usr/bin
-chmod +x /data/data/com.termux/files/usr/bin/entropy
-chmod +x /bin/entropy
-chmod +x /usr/local/bin/entropy
 cd ~/entropy
+chmod +x install.sh
+./install.sh
 cp -r ~/.entropy/RECHECK ~/entropy
 rm -rf ~/.entropy
 } &> /dev/null
