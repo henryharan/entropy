@@ -44,4 +44,5 @@ fi
 rm -r ~/entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
+rm /data/data/com.termux/files/usr/bin/entropy
 } &> /dev/null
