@@ -59,7 +59,7 @@ echo ""$BS"Installing update..."$CE""
 {
 mkdir ~/.entropy
 cp -r ~/entropy/RECHECK ~/.entropy
-rm -r ~/entropy
+rm -rf ~/entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
 cd ~
@@ -71,7 +71,7 @@ chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
 cd ~/entropy
 cp -r ~/.entropy/RECHECK ~/entropy
-rm -r ~/.entropy
+rm -rf ~/.entropy
 } &> /dev/null
 echo ""$GNS"Successfully updated..."$CE""
 sleep 1
