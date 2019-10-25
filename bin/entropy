@@ -62,6 +62,7 @@ cp -r ~/entropy/RECHECK ~/.entropy
 rm -rf ~/entropy
 rm /bin/entropy
 rm /usr/local/bin/entropy
+rm /data/data/com.termux/files/usr/bin/entropy
 cd ~
 git clone https://github.com/entynetproject/entropy.git
 cd entropy/bin
