@@ -47,6 +47,16 @@ printf '\033]2;Entropy Exploit\a'
 
 if [[ "$1" = "-u" || "$1" = "--update" ]]
 then
+{
+ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
+} &> /dev/null
+if [[ "$ASESR" != "" ]]
+then 
+sleep 1
+echo ""$RS"Download failed!"$CE""
+sleep 1
+exit
+fi
 if [[ $EUID -ne 0 ]]
 then
 sleep 1
@@ -71,7 +81,7 @@ chmod +x install.sh
 cp -r ~/.entropy/RECHECK ~/entropy
 rm -rf ~/.entropy
 } &> /dev/null
-echo ""$GNS"Successfully updated..."$CE""
+echo ""$GNS"Successfully updated!"$CE""
 sleep 1
 exit
 fi
