@@ -133,6 +133,8 @@ CONF="amd"
 else
 echo "$CONF" >> /etc/entropy.conf
 fi
+else
+echo "$CONF" >> /etc/entropy.conf
 fi
 fi
 sleep 1
