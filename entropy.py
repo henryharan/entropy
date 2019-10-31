@@ -39,7 +39,6 @@ import time
 try:
     import requests
     import tailer
-    import pyfiglet
     import shodan
     
 except ImportError as e:
