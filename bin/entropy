@@ -47,6 +47,22 @@ printf '\033]2;Entropy Exploit\a'
 
 if [[ "$1" = "-u" || "$1" = "--update" ]]
 then
+if [[ -d /data/data/com.termux ]]
+then
+if [[ -f /data/data/com.termux/files/usr/bin/entropy ]]
+then
+UPD="true"
+else
+UPD="false"
+fi
+else
+if [[ -f /usr/local/bin/entropy ]]
+then
+UPD="true"
+else
+UPD="false"
+fi
+fi
 {
 ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
 } &> /dev/null
@@ -75,9 +91,14 @@ rm /usr/local/bin/entropy
 rm /data/data/com.termux/files/usr/bin/entropy
 cd ~
 git clone https://github.com/entynetproject/entropy.git
+if [[ "$UPD" != "true" ]]
+then
+sleep 0
+else
 cd ~/entropy
 chmod +x install.sh
 ./install.sh
+fi
 cp -r ~/.entropy/RECHECK ~/entropy
 rm -rf ~/.entropy
 } &> /dev/null
