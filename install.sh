@@ -42,26 +42,11 @@ fi
 
 if [[ -d ~/entropy ]]
 then
-cd ~/entropy/bin
-{
-cp entropy /usr/local/bin
-chmod +x /usr/local/bin/entropy
-cp entropy /bin
-chmod +x /bin/entropy
-cp entropy /data/data/com.termux/files/usr/bin
-chmod +x /data/data/com.termux/files/usr/bin/entropy
-} &> /dev/null
+sleep 0
 else
 cd ~
 {
 git clone https://github.com/entynetproject/entropy.git
-cd ~/entropy/bin
-cp entropy /usr/local/bin
-chmod +x /usr/local/bin/entropy
-cp entropy /bin
-chmod +x /bin/entropy
-cp entropy /data/data/com.termux/files/usr/bin
-chmod +x /data/data/com.termux/files/usr/bin/entropy
 } &> /dev/null
 fi
 sleep 0.5
@@ -210,4 +195,14 @@ fi
 {
 pip3 install setuptools
 pip3 install -r requirements.txt
+} &> /dev/null
+
+{
+cd ~/entropy/bin
+cp entropy /usr/local/bin
+chmod +x /usr/local/bin/entropy
+cp entropy /bin
+chmod +x /bin/entropy
+cp entropy /data/data/com.termux/files/usr/bin
+chmod +x /data/data/com.termux/files/usr/bin/entropy
 } &> /dev/null
