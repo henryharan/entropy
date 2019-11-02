@@ -91,8 +91,7 @@ fi
 else 
 echo ""$BS"Installing dependencies..."$CE""
 pkg update
-pkg -y install python3
-pkg -y install python3-pip
+pkg -y install python
 fi
 fi
 
@@ -167,8 +166,7 @@ fi
 else 
 echo ""$BS"Installing dependencies..."$CE""
 pkg update
-pkg -y install python3
-pkg -y install python3-pip
+pkg -y install python
 fi
 fi
 
