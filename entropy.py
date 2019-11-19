@@ -44,9 +44,9 @@ try:
 except ImportError as e:
     C = '\033[1;33m'
     E = '\033[0;97m'
-    print(C+"\[!]"+color.E+" Failed to install some necessary dependencies!")
-    print(C+"\[!]"+color.E+" Because of this Entropy will be work incorrectly!")
-    print(C+"\[!]"+color.E+" You can install dependencies from requirements.txt!")
+    print(C+"[!]"+color.E+" Failed to install some necessary dependencies!")
+    print(C+"[!]"+color.E+" Because of this Entropy will be work incorrectly!")
+    print(C+"[!]"+color.E+" You can install dependencies from requirements.txt!")
     
 
 TMP_PATH='/tmp/'
