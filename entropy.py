@@ -559,6 +559,11 @@ if __name__=='__main__':
     try:
         main()
     except Exception:
+        A = '\033[1;34m'
+        B = '\033[1;31m'
+        C = '\033[1;33m'
+        E = '\033[0;97m'
+        G = '\033[1;32m'
         os.system("cat banner/banner.txt")
         print("")
-        print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
+        print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help.")
