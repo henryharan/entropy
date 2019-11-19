@@ -564,6 +564,4 @@ if __name__=='__main__':
         C = '\033[1;33m'
         E = '\033[0;97m'
         G = '\033[1;32m'
-        os.system("cat banner/banner.txt")
-        print("")
         print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help.")
