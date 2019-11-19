@@ -350,17 +350,17 @@ class GoAThread(threading.Thread):
                             if 'nc' in i or 'sh' in i:
                                 if not self.ftp_flag:
                                     if args.outputfile:
-                                        logger.info(color.C+'[!]'+color.E+' The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
-                                    print(color.C+'[!]'+color.E+' The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
+                                        logger.info(color.C+"[!]"+color.E+" The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
+                                    print(color.C+"[!]"+color.E+" The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
                                     self.ftp_flag=True
                             elif '@' in i:
                                 if not self.mailbox_flag:
                                     tmp_mailbox = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.C+'[!]'+color.E+' The ip:%s,port:%s,mailbox:%s" % (self.ip, self.port, tmp_mailbox))
-                                        logger.info(color.C+'[!]'+color.E+' You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
-                                    print(color.C+'[!]'+color.E+' The ip:%s,port:%s,mailbox:%s" % (self.ip, self.port, tmp_mailbox))
-                                    print(color.C+'[!]'+color.E+' You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
+                                        logger.info(color.C+"[!]"+color.E+" The ip:%s,port:%s,mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                        logger.info(color.C+"[!]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
+                                    print(color.C+"[!]"+color.E+" The ip:%s,port:%s,mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                    print(color.C+"[!]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
                                     self.mailbox_flag = True
                                     self.keep_strings_file = True
                             elif count == 0:
@@ -382,8 +382,8 @@ class GoAThread(threading.Thread):
                         else:
                             self.keep_strings_file = True
                             if args.outputfile:
-                                logger.info(color.C+'[!]'+color.E+' The default username is not admin, you need to check manually in directory RECHECK!The file is recheck_%s"%self.ip)
-                            print(color.C+'[!]'+color.E+' The default username is not admin, you need to check manually in directory RECHECK!The file is recheck_%s"%self.ip)
+                                logger.info(color.C+"[!]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK!The file is recheck_%s"%self.ip)
+                            print(color.C+"[!]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK!The file is recheck_%s"%self.ip)
                 except Exception as e:
                     if args.outputfile:
                         logger.error(color.B+"[-]"+color.E+" The error occured in getting info part:%s" % e)
@@ -449,8 +449,8 @@ class Scrapy(object):
             return self.zeiplist
         except Exception as e:
             if args.outputfile:
-                logger.error(color.Warnred+'[!] Scrapying ip from ZoomEye occured.',e)
-            print(color.Warnred+'[!] Scrapying ip from ZoomEye occured.',e)
+                logger.error(color.B+'[-]'+color.E+' Scrapying ip from ZoomEye occured.',e)
+            print(color.B+'[-]'+color.E+' Scrapying ip from ZoomEye occured.',e)
         finally:
             self.s.close()
 
