@@ -481,6 +481,14 @@ def crack(tmp_ip_list):
         pass
 
 def main():
+    class Color(object):
+        A = '\033[1;34m'
+        B = '\033[1;31m'
+        C = '\033[1;33m'
+        E = '\033[0;97m'
+        G = '\033[1;32m'
+
+    color=Color()
     def bundle():
         subprocess.Popen("clear",shell=True)
         os.system("cat banner/banner.txt")
