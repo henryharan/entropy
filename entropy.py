@@ -120,9 +120,9 @@ class NWThread(threading.Thread):
                     tmp=i.split('\'')
                     macaddr=tmp[1]
                     if args.outputfile:
-                        logger.info(color.A+"[*]"+color.E+" %s:%s, MAC: %s"%(self.ip,self.port,macaddr))
+                        logger.info(color.A+"[*]"+color.E+" The %s:%s, MAC: %s"%(self.ip,self.port,macaddr))
                     if args.verbose:
-                        print(color.A+"[*]"+color.E+" %s:%s, MAC: %s"%(self.ip,self.port,macaddr))
+                        print(color.A+"[*]"+color.E+" The %s:%s, MAC: %s"%(self.ip,self.port,macaddr))
                     return macaddr
         except Exception:
             return None
