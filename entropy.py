@@ -42,12 +42,11 @@ try:
     import shodan
     
 except ImportError as e:
-    Warl = '\033[31m'
-    Endl = '\033[0m'
-    print(Warl + "[!] Failed to install some necessary dependencies!")
-    print(Warl + "[!] Because of this Entropy will be work incorrectly!")
-    print(Warl + "[!] You can install dependencies from requirements.txt!")
-    print(Endl)
+    C = '\033[1;33m'
+    E = '\033[0;97m'
+    print(C+"\[!]"+color.E+" Failed to install some necessary dependencies!")
+    print(C+"\[!]"+color.E+" Because of this Entropy will be work incorrectly!")
+    print(C+"\[!]"+color.E+" You can install dependencies from requirements.txt!")
     
 
 TMP_PATH='/tmp/'
@@ -84,16 +83,14 @@ if args.outputfile:
     logger.setLevel(logging.INFO)
 
 def handlesignal(signum,frame):
-    print(color.Mindyellow+"\n[-] You choose to stop exploiting!"+color.Endlwhites)
+    print(color.C+"\n[!]" + color.E + " You choose to stop exploiting!"+color.Endlwhites)
     sys.exit(0)
 
 class Color(object):
-    Warnred = '\033[31m'
-    Sucgreen = '\033[32m'
-    Defblue = '\033[37m'
-    Headmagenta = '\033[1;37m'
-    Mindyellow='\033[93m'
-    Endlwhites='\033[0m'
+    A = '\033[1;34m'
+    B = '\033[1;31m'
+    C = '\033[1;33m'
+    E = '\033[0;97m'
 
 color=Color()
 signal.signal(signal.SIGINT,handlesignal)
