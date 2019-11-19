@@ -91,6 +91,7 @@ class Color(object):
     B = '\033[1;31m'
     C = '\033[1;33m'
     E = '\033[0;97m'
+    G = '\033[1;32m'
 
 color=Color()
 signal.signal(signal.SIGINT,handlesignal)
@@ -119,9 +120,9 @@ class NWThread(threading.Thread):
                     tmp=i.split('\'')
                     macaddr=tmp[1]
                     if args.outputfile:
-                        logger.info(color.Defblue+"IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
+                        logger.info(color.A+"[*]"+color.E+" IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
                     if args.verbose:
-                        print(color.Defblue+"IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
+                        print(color.A+"[*]"+color.E+" IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
                     return macaddr
         except Exception:
             return None
