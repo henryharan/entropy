@@ -280,7 +280,7 @@ class NWThread(threading.Thread):
                             time.sleep(tmp_sleep)
                             if tmp_r.status_code == 200:
                                 if args.outputfile:
-                                    logger.info(color.Sucgreen+"The %s:%s, username: %s,password: %s" % (self.ip, self.port, i, j))
+                                    logger.info(color.G+"[+]"+color.E+" The %s:%s, username: %s,password: %s" % (self.ip, self.port, i, j))
                                 print(color.G+"[+]"+color.E+" The %s:%s, username: %s,password: %s" % (self.ip, self.port, i, j))
                                 return
                             else:
