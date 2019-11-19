@@ -26,16 +26,17 @@ N="\033[1;37m"
 C="\033[0m"
 
 CE="\033[0m"
-RS="\033[31m"
+RS="\033[1;31m"
 YS="\033[1;33m"
-BS="-e \033[37m[*] "
+BS="-e \033[1;34m[*]\033[0;97m "
 
-R="\033[31m"
+R="\033[1;31m"
+WS="\033[0;97m"
 
 if [[ $EUID -ne 0 ]]
 then
    sleep 1
-   echo -e ""$RS"[!] This script must be run as root!"$CE"" 1>&2
+   echo -e ""$RS"[-]"$WS" This script must be run as root!"$CE"" 1>&2
    sleep 1
    exit
 fi
