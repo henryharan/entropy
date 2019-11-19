@@ -357,10 +357,10 @@ class GoAThread(threading.Thread):
                                 if not self.mailbox_flag:
                                     tmp_mailbox = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.C+"[!]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
-                                        logger.info(color.C+"[!]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
-                                    print(color.C+"[!]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
-                                    print(color.C+"[!]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                        logger.info(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
+                                    print(color.G+"[+]"+color.E+" The %s:%s, mailbox:%s" % (self.ip, self.port, tmp_mailbox))
+                                    print(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK! The file is recheck_%s"%self.ip)
                                     self.mailbox_flag = True
                                     self.keep_strings_file = True
                             elif count == 0:
@@ -382,8 +382,8 @@ class GoAThread(threading.Thread):
                         else:
                             self.keep_strings_file = True
                             if args.outputfile:
-                                logger.info(color.C+"[!]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK!The file is recheck_%s"%self.ip)
-                            print(color.C+"[!]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK!The file is recheck_%s"%self.ip)
+                                logger.info(color.G+"[+]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK! The file is recheck_%s"%self.ip)
+                            print(color.G+"[+]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK! The file is recheck_%s"%self.ip)
                 except Exception as e:
                     if args.outputfile:
                         logger.error(color.B+"[-]"+color.E+" The error occured in getting info part:%s" % e)
