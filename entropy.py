@@ -289,8 +289,8 @@ class NWThread(threading.Thread):
                             continue
                     else:
                         if args.outputfile:
-                            logger.info(color.C+"[!]"+color.E+" The IP Camera may not by vulnerable!")
-                        print(color.C+"[!]"+color.E+" The IP Camera may not by vulnerable!")
+                            logger.info(color.C+"[!]"+color.E+" The IP Camera may not be vulnerable!")
+                        print(color.C+"[!]"+color.E+" The IP Camera may not be vulnerable!")
     def run(self):
         try:
             macaddr=self.getMac()
@@ -307,9 +307,9 @@ class NWThread(threading.Thread):
                     time.sleep(0)
             else:
                 if args.outputfile:
-                    logger.info(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable!" % (self.ip,self.port))
+                    logger.info(color.C+"[!]"+color.E+" The IP Camera %s:%s may not be vulnerable!" % (self.ip,self.port))
                     logger.info()
-                print(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable!" % (self.ip,self.port))
+                print(color.C+"[!]"+color.E+" The IP Camera %s:%s may not be vulnerable!" % (self.ip,self.port))
                 time.sleep(0)
         except Exception:
             pass
@@ -350,8 +350,8 @@ class GoAThread(threading.Thread):
                             if 'nc' in i or 'sh' in i:
                                 if not self.ftp_flag:
                                     if args.outputfile:
-                                        logger.info(color.C+"[!]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
-                                    print(color.C+"[!]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
+                                    print(color.G+"[+]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
                                     self.ftp_flag=True
                             elif '@' in i:
                                 if not self.mailbox_flag:
@@ -497,8 +497,8 @@ def main():
                 tmp_ip_list=tmp_s.shodan()
                 crack(tmp_ip_list)
         except Exception as e:
-            print("The error occured:",e)
-            print("Please use python3 entropy.py -h or entropy -h for more help.")
+            print(colors.B+"[-]"+colors.E+" The error occured:",e)
+            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.zoomeye:
         bundle()
         try:
@@ -515,8 +515,8 @@ def main():
                     tmp_ip_list=tmp_s.zoomeye()
                 crack(tmp_ip_list)
         except Exception as e:
-            print("The error occured:",e)
-            print("Please use python3 entropy.py -h or entropy -h for more help.")
+            print(colors.B+"[-]"+colors.E+" The error occured:",e)
+            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.inputfile:
         bundle()
         try:
@@ -526,8 +526,8 @@ def main():
                     tmp_ip_list.append(i.strip())
             crack(tmp_ip_list)
         except Exception as e:
-            print("The error occured: %s"%e)
-            print("Please use python3 entropy.py -h or entropy -h for more help.")
+            print(colors.B+"[-]"+colors.E+" The error occured: %s"%e)
+            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
     elif args.ip:
         bundle()
         try:
@@ -540,12 +540,12 @@ def main():
             inst.start()
             inst.join()
         except Exception as e:
-            print("The error occured: %s"%e)
-            print("Please use python3 entropy.py -h or entropy -h for more help.")
+            print(colors.B+"[-]"+colors.E+" The error occured: %s"%e)
+            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
     else:
         os.system("cat banner/banner.txt")
         print("")
-        print("Please use python3 entropy.py -h or entropy -h for more help.")
+        print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
 
 if __name__=='__main__':
     try:
@@ -553,4 +553,4 @@ if __name__=='__main__':
     except Exception:
         os.system("cat banner/banner.txt")
         print("")
-        print("Please use python3 entropy.py -h or entropy -h for more help.")
+        print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
