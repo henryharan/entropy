@@ -25,22 +25,22 @@
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
 #blue start 
-	BS="-e \033[37m[*] "
+	BS="-e \033[1;34m[*]\033[0;97m "
 #color end
-	CE="\033[0m"
+	CE="\033[0;97m"
 #red start
-	RS="-e \033[31m[!] "
+	RS="-e \033[1;31m[-]\033[0;97m "
 #green start
-	GNS="-e \033[32m[+] "
+	GNS="-e \033[1;32m[+]\033[0;97m "
 else
 #blue start 
-	BS="-e \e[0;37m[*] "
+	BS="-e \e[1;34m[*]\e[0;97m "
 #color end
-	CE="\e[0m"
+	CE="\e[0;97m"
 #red start
-	RS="-e \e[0;31m[!] "
+	RS="-e \e[1;31m[-]\e[0;97m "
 #green start
-	GNS="-e \e[0;32m[+] "
+	GNS="-e \e[1;32m[+]\e[0;97m "
 fi
 
 printf '\033]2;Entropy Exploit\a'
