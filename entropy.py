@@ -203,49 +203,49 @@ class NWThread(threading.Thread):
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" The error occured in killing addpy part: %s" % e)
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" The error occured in killing addpy part: %s" % e)
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.usefile,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" (%s) the error occured in removing addpy part: %s"%(self.ip,e))
+                    logger.error(color.B+"[-]"+color.E+" The error occured in removing addpy part: %s" % e)
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" The error occured in killing addpy part: %s" % e)
             try:
                 pw.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in killing wget part: %s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" The error occured in killing wget part: %s" % e)
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" The error occured in killing addpy part: %s" % e)
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.tmpstream,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in removing tmpstream part: %s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" The error occured in removing tmpstream part: %s" % e)
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing addpy part: %s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" The error occured in killing addpy part: %s" % e)
             try:
                 pt.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in killing tail part: %s" % (self.ip, e))
+                    logger.error(color.B+"[-]"+color.E+" The error occured in killing tail part: %s" % e)
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" (%s) The error occured in killing tail part: %s" % (self.ip, e))
+                    print(color.B+"[-]"+color.E+" The error occured in killing tail part: %s" % e)
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.tmpout,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.B+"[-]"+color.E+" (%s) The error occured in removing tmpout part: %s"%(self.ip,e))
+                    logger.error(color.B+"[-]"+color.E+" The error occured in removing tmpout part: %s" % e)
                 if args.verbose:
-                    print(color.B+"[-]"+color.E+" (%s) The error occured in removing tmpout part: %s"%(self.ip,e))
+                    print(color.B+"[-]"+color.E+" The error occured in removing tmpout part: %s" % e)
     def exploit(self):
         for i in self.loginlist:
             for j in self.loginlist:
