@@ -507,8 +507,8 @@ def main():
                 tmp_ip_list=tmp_s.shodan()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(colors.B+"[-]"+colors.E+" The error occured:",e)
-            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
+            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.zoomeye:
         bundle()
         try:
@@ -525,8 +525,8 @@ def main():
                     tmp_ip_list=tmp_s.zoomeye()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(colors.B+"[-]"+colors.E+" The error occured:",e)
-            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
+            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.inputfile:
         bundle()
         try:
@@ -536,8 +536,8 @@ def main():
                     tmp_ip_list.append(i.strip())
             crack(tmp_ip_list)
         except Exception as e:
-            print(colors.B+"[-]"+colors.E+" The error occured: %s"%e)
-            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
+            print(color.B+"[-]"+color.E+" The error occured: %s"%e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.ip:
         bundle()
         try:
@@ -550,12 +550,12 @@ def main():
             inst.start()
             inst.join()
         except Exception as e:
-            print(colors.B+"[-]"+colors.E+" The error occured: %s"%e)
-            print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
+            print(color.B+"[-]"+color.E+" The error occured: %s"%e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     else:
         os.system("cat banner/banner.txt")
         print("")
-        print(colors.C+"[!]"+colors.E+" Please use python3 entropy.py -h or entropy -h for more help.")
+        print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
 
 if __name__=='__main__':
     try:
@@ -566,4 +566,6 @@ if __name__=='__main__':
         C = '\033[1;33m'
         E = '\033[0;97m'
         G = '\033[1;32m'
-        print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help.")
+        D = '\033[0m'
+        print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help."+D)
+    print(D)
