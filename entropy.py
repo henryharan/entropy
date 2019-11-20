@@ -568,4 +568,3 @@ if __name__=='__main__':
         G = '\033[1;32m'
         D = '\033[0m'
         print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help."+D)
-    print(D)
