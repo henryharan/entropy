@@ -451,8 +451,8 @@ class Scrapy(object):
             return self.zeiplist
         except Exception as e:
             if args.outputfile:
-                logger.error(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.',e)
-            print(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.',e)
+                logger.error(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.'+color.D)
+            print(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.'+color.D)
         finally:
             self.s.close()
 
@@ -507,7 +507,7 @@ def main():
                 tmp_ip_list=tmp_s.shodan()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.B+"[-]"+color.E+" The error occured: %s%s" % (e,color.D))
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.zoomeye:
         bundle()
@@ -525,7 +525,7 @@ def main():
                     tmp_ip_list=tmp_s.zoomeye()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.B+"[-]"+color.E+" The error occured: %s%s" % (e,color.D))
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.inputfile:
         bundle()
@@ -536,7 +536,7 @@ def main():
                     tmp_ip_list.append(i.strip())
             crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s"%e)
+            print(color.B+"[-]"+color.E+" The error occured: %s%s" % (e,color.D))
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.ip:
         bundle()
@@ -550,7 +550,7 @@ def main():
             inst.start()
             inst.join()
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s"%e)
+            print(color.B+"[-]"+color.E+" The error occured: %s%s" % (e,color.D))
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     else:
         os.system("cat banner/banner.txt")
