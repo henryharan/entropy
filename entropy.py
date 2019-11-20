@@ -507,7 +507,7 @@ def main():
                 tmp_ip_list=tmp_s.shodan()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s%s" % (e,color.D))
+            print(color.B+"[-]"+color.E+" The error occured:",e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
     elif args.zoomeye:
         bundle()
@@ -525,7 +525,7 @@ def main():
                     tmp_ip_list=tmp_s.zoomeye()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s%s" % (e,color.D))
+            print(color.B+"[-]"+color.E+" The error occured:",e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
     elif args.inputfile:
         bundle()
