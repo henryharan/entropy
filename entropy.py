@@ -44,9 +44,10 @@ try:
 except ImportError as e:
     C = '\033[1;33m'
     E = '\033[0;97m'
-    print(C+"[!]"+color.E+" Failed to install some necessary dependencies!")
-    print(C+"[!]"+color.E+" Because of this Entropy will be work incorrectly!")
-    print(C+"[!]"+color.E+" You can install dependencies from requirements.txt!")
+    D = '\033[0m'
+    print(C+"[!]"+color.E+" Failed to install some necessary dependencies!"+D)
+    print(C+"[!]"+color.E+" Because of this Entropy will be work incorrectly!"+D)
+    print(C+"[!]"+color.E+" You can install dependencies from requirements.txt!"+D)
     
 
 TMP_PATH='/tmp/'
@@ -83,7 +84,7 @@ if args.outputfile:
     logger.setLevel(logging.INFO)
 
 def handlesignal(signum,frame):
-    print(color.C+"\n[!]" + color.E + " You choose to stop exploiting!")
+    print(color.C+"\n[!]" + color.E + " You choose to stop exploiting!" + color.D)
     sys.exit(0)
 
 class Color(object):
@@ -91,6 +92,7 @@ class Color(object):
     B = '\033[1;31m'
     C = '\033[1;33m'
     E = '\033[0;97m'
+    D = '\033[0m'
     G = '\033[1;32m'
 
 color=Color()
