@@ -451,8 +451,8 @@ class Scrapy(object):
             return self.zeiplist
         except Exception as e:
             if args.outputfile:
-                logger.error(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.'+color.D)
-            print(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.'+color.D)
+                logger.error(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.',e)
+            print(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.',e)
         finally:
             self.s.close()
 
