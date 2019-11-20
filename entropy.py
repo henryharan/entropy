@@ -352,45 +352,45 @@ class GoAThread(threading.Thread):
                             if 'nc' in i or 'sh' in i:
                                 if not self.ftp_flag:
                                     if args.outputfile:
-                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
-                                    print(color.G+"[+]"+color.E+" The %s:%s, FTP may be vulnerable!" % (self.ip, self.port))
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, FTP may be vulnerable!%s" % (self.ip, self.port, color.D))
+                                    print(color.G+"[+]"+color.E+" The %s:%s, FTP may be vulnerable!%s" % (self.ip, self.port, color.D))
                                     self.ftp_flag=True
                             elif '@' in i:
                                 if not self.mailbox_flag:
                                     tmp_mailbox = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, mailbox: %s" % (self.ip, self.port, tmp_mailbox))
-                                        logger.info(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK!The file is recheck_%s"%self.ip)
-                                    print(color.G+"[+]"+color.E+" The %s:%s, mailbox: %s" % (self.ip, self.port, tmp_mailbox))
-                                    print(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK! The file is recheck_%s"%self.ip)
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, mailbox: %s%s" % (self.ip, self.port, tmp_mailbox, color.D))
+                                        logger.info(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK! The file is recheck_%s.%s"%(self.ip,color.D))
+                                    print(color.G+"[+]"+color.E+" The %s:%s, mailbox: %s%s" % (self.ip, self.port, tmp_mailbox, color.D))
+                                    print(color.G+"[+]"+color.E+" You may check mailbox password manually in directory RECHECK! The file is recheck_%s.%s"%(self.ip,color.D))
                                     self.mailbox_flag = True
                                     self.keep_strings_file = True
                             elif count == 0:
                                 if 'admin' in i:
                                     tmp_username = i.strip('\n').strip(' ').strip()
                                     if args.outputfile:
-                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, username: %s" % (self.ip, self.port, tmp_username))
-                                    print(color.G+"[+]"+color.E+" The %s:%s, username: %s" % (self.ip, self.port, tmp_username))
+                                        logger.info(color.G+"[+]"+color.E+" The %s:%s, username: %s%s" % (self.ip, self.port, tmp_username, color.D))
+                                    print(color.G+"[+]"+color.E+" The %s:%s, username: %s%s" % (self.ip, self.port, tmp_username, color.D))
                                     count = 1
                                     continue
                             elif count == 1:
                                 tmp_password = i.strip('\n').strip(' ').strip()
                                 if args.outputfile:
-                                    logger.info(color.G+"[+]"+color.E+" The %s:%s, password: %s" % (self.ip, self.port, tmp_password))
-                                print(color.G+"[+]"+color.E+" The %s:%s, password: %s" % (self.ip, self.port, tmp_password))
+                                    logger.info(color.G+"[+]"+color.E+" The %s:%s, password: %s%s" % (self.ip, self.port, tmp_password, color.D))
+                                print(color.G+"[+]"+color.E+" The %s:%s, password: %s%s" % (self.ip, self.port, tmp_password, color.D))
                                 break
                             else:
                                 continue
                         else:
                             self.keep_strings_file = True
                             if args.outputfile:
-                                logger.info(color.G+"[+]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK! The file is recheck_%s"%self.ip)
-                            print(color.G+"[+]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK! The file is recheck_%s"%self.ip)
+                                logger.info(color.G+"[+]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK! The file is recheck_%s.%s"%(self.ip,color.D))
+                            print(color.G+"[+]"+color.E+" The default username is not admin, you need to check manually in directory RECHECK! The file is recheck_%s.%s"%(self.ip,color.D))
                 except Exception as e:
                     if args.outputfile:
-                        logger.error(color.B+"[-]"+color.E+" The error occured in getting info part: %s" % e)
+                        logger.error(color.B+"[-]"+color.E+" The error occured in getting info part: %s%s" % (e,color.D))
                     if args.verbose:
-                        print(color.B+"[-]"+color.E+" The error occured in getting info part: %s" % e)
+                        print(color.B+"[-]"+color.E+" The error occured in getting info part: %s%s" % (e,color.D))
                     pass
                 finally:
                     try:
@@ -401,8 +401,8 @@ class GoAThread(threading.Thread):
                 try:
                     pw.kill()
                     if args.outputfile:
-                        logger.info(color.C+"[!]"+color.E+" The %s:%s may not be vulnerable!"%(self.ip,self.port))
-                    print(color.C+"[!]"+color.E+" The %s:%s may not be vulnerable!"%(self.ip,self.port))
+                        logger.info(color.C+"[!]"+color.E+" The %s:%s may not be vulnerable!%s"%(self.ip,self.port,color.D))
+                    print(color.C+"[!]"+color.E+" The %s:%s may not be vulnerable!%s"%(self.ip,self.port,color.D))
                 except Exception:
                     pass
         finally:
@@ -451,8 +451,8 @@ class Scrapy(object):
             return self.zeiplist
         except Exception as e:
             if args.outputfile:
-                logger.error(color.B+'[-]'+color.E+' Scrapying ip from ZoomEye occured.',e)
-            print(color.B+'[-]'+color.E+' Scrapying ip from ZoomEye occured.',e)
+                logger.error(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.',e)
+            print(color.B+'[-]'+color.E+' Scrapying IP from ZoomEye occured.',e)
         finally:
             self.s.close()
 
