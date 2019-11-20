@@ -507,7 +507,8 @@ def main():
                 tmp_ip_list=tmp_s.shodan()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured:",e)        
+            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
     elif args.zoomeye:
         bundle()
         try:
@@ -525,6 +526,7 @@ def main():
                 crack(tmp_ip_list)
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
     elif args.inputfile:
         bundle()
         try:
@@ -534,7 +536,8 @@ def main():
                     tmp_ip_list.append(i.strip())
             crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s %s" % (e, color.D))
+            print(color.B+"[-]"+color.E+" The error occured: %s %s" % e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.ip:
         bundle()
         try:
@@ -547,7 +550,8 @@ def main():
             inst.start()
             inst.join()
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s %s" % (e, color.D))
+            print(color.B+"[-]"+color.E+" The error occured: %s" % e)
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     else:
         os.system("cat banner/banner.txt")
         print("")
