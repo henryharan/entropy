@@ -507,7 +507,7 @@ def main():
                 tmp_ip_list=tmp_s.shodan()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured:",e)        
+            print(color.B+"[-]"+color.E+" The error occured:",e,color.D)        
     elif args.zoomeye:
         bundle()
         try:
@@ -524,7 +524,7 @@ def main():
                     tmp_ip_list=tmp_s.zoomeye()
                 crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.B+"[-]"+color.E+" The error occured:",e,color.D)
     elif args.inputfile:
         bundle()
         try:
