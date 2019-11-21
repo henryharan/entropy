@@ -42,12 +42,11 @@ try:
     import shodan
     
 except ImportError as e:
-    C = '\033[1;33m'
+    C = '\033[1;31m'
     E = '\033[0;97m'
     D = '\033[0m'
-    print(C+"[!]"+color.E+" Failed to install some necessary dependencies!"+D)
-    print(C+"[!]"+color.E+" Because of this Entropy will be work incorrectly!"+D)
-    print(C+"[!]"+color.E+" You can install dependencies from requirements.txt!"+D)
+    print(C+"[-]"+color.E+" Missing some necessary dependencies!"+D)
+    sys.exit(0)
     
 
 TMP_PATH='/tmp/'
@@ -84,7 +83,7 @@ if args.outputfile:
     logger.setLevel(logging.INFO)
 
 def handlesignal(signum,frame):
-    print(color.C+"\n[!]" + color.E + " You choose to stop exploiting!" + color.D)
+    print(color.C+"\n[!]" + color.E + " You choose to stop exploiting." + color.D)
     sys.exit(0)
 
 class Color(object):
