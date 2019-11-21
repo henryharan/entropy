@@ -163,16 +163,16 @@ class NWThread(threading.Thread):
                     self.init_end_time = time.time()
                     if self.init_end_time - self.starttime > 60:
                         if args.outputfile:
-                            logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!%s"%(self.ip,self.port,color.D))
-                        print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!%s" % (self.ip, self.port, color.D))
+                            logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable.%s"%(self.ip,self.port,color.D))
+                        print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable.%s" % (self.ip, self.port, color.D))
                         break
                 else:
                     for line in tailer.follow(open(self.tmpout, 'r')):
                         self.tail_end_time = time.time()
                         if self.tail_end_time - self.starttime > args.timeout:
                             if args.outputfile:
-                                logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!%s" % (self.ip, self.port, color.D))
-                            print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!%s" % (self.ip, self.port, color.D))
+                                logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable.%s" % (self.ip, self.port, color.D))
+                            print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable.%s" % (self.ip, self.port, color.D))
                             break
                         if self.count == 0:
                             if line == mac:
@@ -291,8 +291,8 @@ class NWThread(threading.Thread):
                             continue
                     else:
                         if args.outputfile:
-                            logger.info(color.C+"[!]"+color.E+" The IP Camera is not vulnerable!"+color.D)
-                        print(color.C+"[!]"+color.E+" The IP Camera is not vulnerable!"+color.D)
+                            logger.info(color.C+"[!]"+color.E+" The IP Camera is not vulnerable."+color.D)
+                        print(color.C+"[!]"+color.E+" The IP Camera is not vulnerable."+color.D)
     def run(self):
         try:
             macaddr=self.getMac()
@@ -309,9 +309,9 @@ class NWThread(threading.Thread):
                     time.sleep(0)
             else:
                 if args.outputfile:
-                    logger.info(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable!%s" % (self.ip,self.port,color.D))
+                    logger.info(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
                     logger.info()
-                print(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable!%s" % (self.ip,self.port,color.D))
+                print(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
                 time.sleep(0)
         except Exception:
             pass
@@ -401,8 +401,8 @@ class GoAThread(threading.Thread):
                 try:
                     pw.kill()
                     if args.outputfile:
-                        logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!%s"%(self.ip,self.port,color.D))
-                    print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable!%s"%(self.ip,self.port,color.D))
+                        logger.info(color.C+"[!]"+color.E+" The %s:%s is not vulnerable.%s"%(self.ip,self.port,color.D))
+                    print(color.C+"[!]"+color.E+" The %s:%s is not vulnerable.%s"%(self.ip,self.port,color.D))
                 except Exception:
                     pass
         finally:
