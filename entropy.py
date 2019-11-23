@@ -530,25 +530,8 @@ def main():
         bundle()
         try:
             tmp_ip_list = []
-            import os
-            import os.path
-            if (os.path.exists("/tmp/entropy")):
-                time.sleep(0)
-            else:
-                os.system("mkdir /tmp/entropy")
-                    
-            if (os.path.exists("/tmp/entropy/phpath.temp")):
-                os.system("rm /tmp/entropy/entpath.temp")
-                os.system("echo $OLDPWD >> /tmp/entropy/entpath.temp")
-            else:
-                os.system("echo $OLDPWD >> /tmp/entropy/entpath.temp")
-                    
-            if not '/' in args.inputfile:
-                run = open("/tmp/entropy/entpath.temp").read().split('\n')[-2]+'/'+args.inputfile
-            else:
-                run = args.inputfile
                 
-            with open(run,'r') as f:
+            with open(args.inputfile,'r') as f:
                 for i in f.readlines():
                     tmp_ip_list.append(i.strip())
                     
