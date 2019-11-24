@@ -75,8 +75,26 @@ if args.update:
 
 if args.outputfile:
     logger = logging.getLogger()
+    import sys
+    import os.path
+    if (os.path.exists("/tmp/entropy")):
+        time.sleep(0)
+    else:
+        os.system("mkdir /tmp/entropy")
+                    
+    if (os.path.exists("/tmp/entropy/enpath.temp")):
+        os.system("rm /tmp/entropy/enpath.temp") 
+        os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+    else:
+        os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+                    
+    if not '/' in args.outputfile:
+         outputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.outputfile
+    else:
+         outputfile = args.outputfile    
+
     try:
-        fh = logging.FileHandler(args.outputfile)
+        fh = logging.FileHandler(outputfile)
     except Exception:
         fh=logging.FileHandler(TMP_PATH+args.outputfile)
     logger.addHandler(fh)
@@ -303,13 +321,13 @@ class NWThread(threading.Thread):
                 self.memorydump(macaddr)
                 self.exploit()
                 if args.outputfile:
-                    logger.info()
+                    logger.info('')
                 if args.verbose:
                     time.sleep(0)
             else:
                 if args.outputfile:
                     logger.info(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
-                    logger.info()
+                    logger.info('')
                 print(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
                 time.sleep(0)
         except Exception:
@@ -415,7 +433,7 @@ class GoAThread(threading.Thread):
     def run(self):
         self.getInfo()
         if args.outputfile:
-            logger.info()
+            logger.info('')
         time.sleep(0)
 
 class Scrapy(object):
