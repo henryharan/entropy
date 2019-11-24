@@ -45,7 +45,7 @@ except ImportError as e:
     C = '\033[1;31m'
     E = '\033[0;97m'
     D = '\033[0m'
-    print(C+"[-]"+color.E+" Missing some necessary dependencies!"+D)
+    print(C+"[-]"+E+" Missing some necessary dependencies!"+D)
     sys.exit(0)
     
 
