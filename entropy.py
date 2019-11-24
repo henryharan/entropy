@@ -527,11 +527,28 @@ def main():
             print(color.B+"[-]"+color.E+" The error occured:",e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
     elif args.inputfile:
-        bundle()
+        #bundle()
         try:
             tmp_ip_list = []
-                
-            with open(args.inputfile,'r') as f:
+            import sys
+            import os.path
+            if (os.path.exists("/tmp/entropy")):
+                time.sleep(0)
+            else:
+                os.system("mkdir /tmp/entropy")
+                    
+            if (os.path.exists("/tmp/entropy/enpath.temp")):
+                os.system("rm /tmp/entropy/enpath.temp")
+                os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+            else:
+                os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+                    
+            if not '/' in args.inputfile:
+                inputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.inputfile
+            else:
+                inputfile = args.inputfile    
+            print(inputfile)
+            with open(inputfile,'r') as f:
                 for i in f.readlines():
                     tmp_ip_list.append(i.strip())
                     

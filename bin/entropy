@@ -95,7 +95,6 @@ sleep 1
 exit
 fi
 
-cd ~
 if [[ -d ~/entropy ]]
 then
 {
