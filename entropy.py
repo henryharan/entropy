@@ -576,8 +576,9 @@ def main():
                     
             crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s" % e)
+            print(color.B+"[-]"+color.E+" The error occured: File not found")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+            
     elif args.ip:
         bundle()
         try:
