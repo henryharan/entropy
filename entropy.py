@@ -502,7 +502,7 @@ def crack(tmp_ip_list):
 def bundle():
     import os
     os.system("clear")
-    banner = open("/root/entropy/banner/banner.txt").read()
+    banner = open("banner/banner.txt").read()
     print(banner)
 
 def main():
