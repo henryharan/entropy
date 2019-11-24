@@ -565,15 +565,18 @@ def main():
                     
             if not '/' in args.inputfile:
                 inputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.inputfile
+                os.system("rm -r /tmp/entropy")
             else:
                 inputfile = args.inputfile    
+                os.system("rm -r /tmp/entropy")
+                
             with open(inputfile,'r') as f:
                 for i in f.readlines():
                     tmp_ip_list.append(i.strip())
                     
             crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s %s" % e)
+            print(color.B+"[-]"+color.E+" The error occured: %s" % e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     elif args.ip:
         bundle()
@@ -604,4 +607,7 @@ if __name__=='__main__':
         E = '\033[0;97m'
         G = '\033[1;32m'
         D = '\033[0m'
+        import os
+        os.system("cat banner/banner.txt")
+        print("")
         print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help."+D)
