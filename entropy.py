@@ -500,8 +500,10 @@ def crack(tmp_ip_list):
         pass
 
 def bundle():
-    os.system('clear')
-    print(open('/root/entropy/banner/banner.txt').read())
+    import os
+    os.system("clear")
+    banner = open("/root/entropy/banner/banner.txt").read()
+    print(banner)
 
 def main():
     class Color(object):
