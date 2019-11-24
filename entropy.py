@@ -527,7 +527,7 @@ def main():
             print(color.B+"[-]"+color.E+" The error occured:",e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
     elif args.inputfile:
-        #bundle()
+        bundle()
         try:
             tmp_ip_list = []
             import sys
