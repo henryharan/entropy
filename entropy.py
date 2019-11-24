@@ -481,6 +481,10 @@ def crack(tmp_ip_list):
     except Exception:
         pass
 
+def bundle():
+    os.system('clear')
+    print(open('/root/entropy/banner/banner.txt').read()+'\n')
+
 def main():
     class Color(object):
         A = '\033[1;34m'
@@ -490,10 +494,6 @@ def main():
         G = '\033[1;32m'
 
     color=Color()
-    def bundle():
-        subprocess.Popen("clear",shell=True)
-        os.system("cat banner/banner.txt")
-        print("")
     if args.shodan:
         bundle()
         try:
@@ -547,7 +547,6 @@ def main():
                 inputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.inputfile
             else:
                 inputfile = args.inputfile    
-            print(inputfile)
             with open(inputfile,'r') as f:
                 for i in f.readlines():
                     tmp_ip_list.append(i.strip())
