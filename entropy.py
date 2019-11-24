@@ -483,7 +483,7 @@ def crack(tmp_ip_list):
 
 def bundle():
     os.system('clear')
-    print(open('/root/entropy/banner/banner.txt').read()+'\n')
+    print(open('/root/entropy/banner/banner.txt').read())
 
 def main():
     class Color(object):
