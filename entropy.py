@@ -607,7 +607,4 @@ if __name__=='__main__':
         E = '\033[0;97m'
         G = '\033[1;32m'
         D = '\033[0m'
-        import os
-        os.system("cat banner/banner.txt")
-        print("")
         print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help."+D)
