@@ -112,6 +112,7 @@ then
 cd ~
 {
 git clone https://github.com/entynetproject/entropy.git
+cd $OLDPWD
 cd ~/entropy
 } &> /dev/null
 mv entropy.py entropy
