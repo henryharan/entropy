@@ -76,22 +76,8 @@ if args.update:
 if args.outputfile:
     logger = logging.getLogger()
     import sys
-    import os.path
-    if (os.path.exists("/tmp/entropy")):
-        time.sleep(0)
-    else:
-        os.system("mkdir /tmp/entropy")
-                    
-    if (os.path.exists("/tmp/entropy/enpath.temp")):
-        os.system("rm /tmp/entropy/enpath.temp") 
-        os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
-    else:
-        os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
-                    
-    if not '/' in args.outputfile:
-         outputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.outputfile
-    else:
-         outputfile = args.outputfile    
+    
+    outputfile = args.outputfile    
 
     try:
         fh = logging.FileHandler(outputfile)
@@ -551,24 +537,8 @@ def main():
         try:
             tmp_ip_list = []
             import sys
-            import os.path
-            if (os.path.exists("/tmp/entropy")):
-                time.sleep(0)
-            else:
-                os.system("mkdir /tmp/entropy")
-                    
-            if (os.path.exists("/tmp/entropy/enpath.temp")):
-                os.system("rm /tmp/entropy/enpath.temp")
-                os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
-            else:
-                os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
-                    
-            if not '/' in args.inputfile:
-                inputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.inputfile
-                os.system("rm -r /tmp/entropy")
-            else:
-                inputfile = args.inputfile    
-                os.system("rm -r /tmp/entropy")
+            
+            inputfile = args.inputfile
                 
             with open(inputfile,'r') as f:
                 for i in f.readlines():
