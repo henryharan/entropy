@@ -100,9 +100,11 @@ then
 {
 cd ~/entropy
 } &> /dev/null
-mv entropy.py entropy
+mv entropy.py etc
+mv etc/entropy ~/entropy
 python3 entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
-mv entropy entropy.py
+mv entropy etc
+mv etc/entropy.py ~/entropy
 else
 {
 ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
@@ -115,9 +117,11 @@ git clone https://github.com/entynetproject/entropy.git
 cd $OLDPWD
 cd ~/entropy
 } &> /dev/null
-mv entropy.py entropy
+mv entropy.py etc
+mv etc/entropy ~/entropy
 python3 entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
-mv entropy entropy.py
+mv entropy etc
+mv etc/entropy.py ~/entropy
 else
 cd ~
 sleep 1
