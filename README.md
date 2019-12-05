@@ -107,13 +107,13 @@
 
     entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
-# Terms of use
+# Entropy exploit disclaimer
 
-    This tool is only for educational purposes only.
-    Use this tool wisely and never without permission.
-    I am not responsible for anything you do with this tool.
-
-# Entropy MIT license
+    INFO: Usage of the Phonia Toolkit for attacking targets without prior mutual consent is illegal. 
+    It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
+    Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+    
+# Entropy exploit license
 
     MIT License
 
