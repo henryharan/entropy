@@ -84,9 +84,9 @@ if args.outputfile:
                     
     if (os.path.exists("/tmp/entropy/enpath.temp")):
         os.system("rm /tmp/entropy/enpath.temp") 
-        os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+        os.system("echo '$OLDPWD' >> /tmp/entropy/enpath.temp")
     else:
-        os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+        os.system("echo '$OLDPWD' >> /tmp/entropy/enpath.temp")
                     
     if not '/' in args.outputfile:
          outputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.outputfile
@@ -560,14 +560,16 @@ def main():
                     
             if (os.path.exists("/tmp/entropy/enpath.temp")):
                 os.system("rm /tmp/entropy/enpath.temp")
-                os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+                os.system("echo '$OLDPWD' >> /tmp/entropy/enpath.temp")
             else:
-                os.system("echo $OLDPWD >> /tmp/entropy/enpath.temp")
+                os.system("echo '$OLDPWD' >> /tmp/entropy/enpath.temp")
                     
             if not '/' in args.inputfile:
                 inputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.inputfile
+                os.system("rm -rf /tmp/entropy")
             else:
-                inputfile = args.inputfile    
+                inputfile = args.inputfile  
+                os.system("rm -rf /tmp/entropy")
                 
             with open(inputfile,'r') as f:
                 for i in f.readlines():
