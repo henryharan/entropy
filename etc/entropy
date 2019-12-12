@@ -90,13 +90,14 @@ if args.outputfile:
                     
     if not '/' in args.outputfile:
          outputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.outputfile
+         os.system("rm -rf /tmp/entropy")
     else:
          outputfile = args.outputfile    
-
+         os.system("rm -rf /tmp/entropy")
     try:
         fh = logging.FileHandler(outputfile)
     except Exception:
-        fh=logging.FileHandler(TMP_PATH+args.outputfile)
+        fh=logging.FileHandler(TMP_PATH+outputfile)
     logger.addHandler(fh)
     logger.setLevel(logging.INFO)
 
@@ -565,10 +566,10 @@ def main():
                     
             if not '/' in args.inputfile:
                 inputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.inputfile
-                os.system("rm -r /tmp/entropy")
+                os.system("rm -rf /tmp/entropy")
             else:
                 inputfile = args.inputfile    
-                os.system("rm -r /tmp/entropy")
+                os.system("rm -rf /tmp/entropy")
                 
             with open(inputfile,'r') as f:
                 for i in f.readlines():
