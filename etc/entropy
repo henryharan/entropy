@@ -566,10 +566,8 @@ def main():
                     
             if not '/' in args.inputfile:
                 inputfile = open("/tmp/entropy/enpath.temp").read().split('\n')[-2]+'/'+args.inputfile
-                os.system("rm -rf /tmp/entropy")
             else:
                 inputfile = args.inputfile    
-                os.system("rm -rf /tmp/entropy")
                 
             with open(inputfile,'r') as f:
                 for i in f.readlines():
