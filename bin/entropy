@@ -99,12 +99,22 @@ if [[ -d ~/entropy ]]
 then
 {
 cd ~/entropy
-} &> /dev/null
-mv entropy.py etc
+mkdir etc/.disabled
+mv entropy etc/.disabled
 mv etc/entropy ~/entropy
-python3 entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
-mv entropy etc
-mv etc/entropy.py ~/entropy
+cp etc/.disabled/entropy etc
+rm -rf etc/.disabled
+} &> /dev/null
+chmod +x entropy
+./entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
+{
+cd ~/entropy
+mkdir etc/.disabled
+mv entropy etc/.disabled
+mv etc/entropy ~/entropy
+cp etc/.disabled/entropy etc
+rm -rf etc/.disabled
+} &> /dev/null
 else
 {
 ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
@@ -116,12 +126,22 @@ cd ~
 git clone https://github.com/entynetproject/entropy.git
 cd $OLDPWD
 cd ~/entropy
-} &> /dev/null
-mv entropy.py etc
+mkdir etc/.disabled
+mv entropy etc/.disabled
 mv etc/entropy ~/entropy
-python3 entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
-mv entropy etc
-mv etc/entropy.py ~/entropy
+cp etc/.disabled/entropy etc
+rm -rf etc/.disabled
+} &> /dev/null
+chmod +x entropy
+./entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
+{
+cd ~/entropy
+mkdir etc/.disabled
+mv entropy etc/.disabled
+mv etc/entropy ~/entropy
+cp etc/.disabled/entropy etc
+rm -rf etc/.disabled
+} &> /dev/null
 else
 cd ~
 sleep 1
