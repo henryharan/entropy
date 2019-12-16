@@ -43,7 +43,6 @@ fi
 
 {
 rm -rf ~/entropy
-rm /etc/entropy.conf
 rm /bin/entropy
 rm /usr/local/bin/entropy
 rm /data/data/com.termux/files/usr/bin/entropy
