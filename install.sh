@@ -70,8 +70,13 @@ apt-get -y install python3
 apt-get -y install python3-pip
 apk add python3
 apk add python3-pip
-pacman -S python3
-pacman -S python3-pip
+pacman -Sy
+yes | pacman -S python3
+yes | pacman -S python3-pip
+zypper install -y python3
+zypper install -y python3-pip
+yum -y install python3
+yum -y install python3-pip
 } &> /dev/null
 
 {
