@@ -69,10 +69,10 @@ apt-get update
 apt-get -y install python3
 apt-get -y install python3-pip
 apk add python3
-apk add python3-pip
+apk add py3-pip
 pacman -Sy
 yes | pacman -S python3
-yes | pacman -S python3-pip
+yes | pacman -S python-pip
 zypper refresh
 zypper install -y python3
 zypper install -y python3-pip
