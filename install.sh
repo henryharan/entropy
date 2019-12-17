@@ -73,6 +73,7 @@ apk add python3-pip
 pacman -Sy
 yes | pacman -S python3
 yes | pacman -S python3-pip
+zypper refresh
 zypper install -y python3
 zypper install -y python3-pip
 yum -y install python3
