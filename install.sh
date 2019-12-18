@@ -86,8 +86,6 @@ eopkg -y install pip
 xbps-install -S
 xbps-install -y python3
 xbps-install -y python3-pip
-nix-env -i python3
-nix-env -i python3.7-bootstrapped-pip-19.2.3
 } &> /dev/null
 
 {
