@@ -64,26 +64,36 @@ sleep 1
 
 {
 pkg update
+pkg -y install git
 pkg -y install python
+apt-get update
+apt-get -y install git
 apt-get -y install python3
 apt-get -y install python3-pip
 apk update
+apk add git
 apk add python3
 apk add py3-pip
 pacman -Sy
+pacman -S --noconfirm git
 pacman -S --noconfirm python3
 pacman -S --noconfirm python3-pip
 zypper refresh
+zypper install -y git
 zypper install -y python3
 zypper install -y python3-pip
+yum -y install git
 yum -y install python3
 yum -y install python3-pip
+dnf -y install git
 dnf -y install python3
 dnf -y install python3-pip
 eopkg update-repo
+eopkg -y install git
 eopkg -y install python3
 eopkg -y install pip
 xbps-install -S
+xbps-install -y git
 xbps-install -y python3
 xbps-install -y python3-pip
 } &> /dev/null
