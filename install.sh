@@ -29,6 +29,7 @@ CE="\033[0m"
 RS="\033[1;31m"
 YS="\033[1;33m"
 BS="-e \033[1;34m[*]\033[0;97m "
+GNS="-e \033[1;32m[+]\033[0;97m "
 
 R="\033[1;31m"
 WS="\033[0;97m"
@@ -112,3 +113,7 @@ chmod +x /bin/entropy
 cp entropy /data/data/com.termux/files/usr/bin
 chmod +x /data/data/com.termux/files/usr/bin/entropy
 } &> /dev/null
+
+sleep 1
+echo ""$GNS"Successfully installed!"$CE""
+sleep 1
