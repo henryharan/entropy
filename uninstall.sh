@@ -33,6 +33,8 @@ BS="-e \033[1;34m"
 R="\033[1;31m"
 WS="\033[0;97m"
 
+printf '\033]2;uninstall.sh\a'
+
 if [[ $EUID -ne 0 ]]
 then
    sleep 1
