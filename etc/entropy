@@ -78,7 +78,7 @@ if args.outputfile:
     import sys
     import os.path
                     
-    if not '/' in args.outputfile:
+    if args.outputfile[0] != '/':
          outputfile = os.environ['OLDPWD']+'/'+args.outputfile
     else:
          outputfile = args.outputfile    
@@ -542,7 +542,7 @@ def main():
             import sys
             import os.path
             
-            if not '/' in args.inputfile:
+            if args.inputfile[0] != '/':
                 inputfile = os.environ['OLDPWD']+'/'+args.inputfile
             else:
                 inputfile = args.inputfile  
