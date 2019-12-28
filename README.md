@@ -31,13 +31,19 @@
  </a>
 </p>
 
-# About entropy exploit
+***
+
+# About Entropy Exploit
 
     INFO: Entropy Exploit is an IP webcam exploit also named 
     Netwave and GoAhead IP Camera exploit. Entropy is a powerful 
     exploitation tool for webcams penetration testing.
 
-# How to install entropy
+***
+
+# Getting started
+
+## Entropy installation
 
 > cd entropy
 
@@ -45,7 +51,7 @@
 
 > ./install.sh
 
-# How to uninstall entropy
+## Entropy uninstallation
 
 > cd entropy
 
@@ -53,7 +59,9 @@
 
 > ./uninstall.sh
 
-# How to execute entropy
+***
+
+# Entropy Exploit execution
 
 > entropy -h
 
@@ -90,7 +98,9 @@
                             https://www.zoomeye.org/api
       -u, --update          Update Entropy Exploit.
 
-# Entropy exploit examples
+***
+
+# Entropy Exploit examples
 
 > Example of the exploiting a single camera
     
@@ -104,13 +114,17 @@
 
     entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
-# Entropy exploit disclaimer
+***
+
+# Entropy Exploit disclaimer
 
     INFO: Usage of the Entropy Exploit for attacking targets without prior mutual consent is illegal. 
     It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
     Developers assume no liability and are not responsible for any misuse or damage caused by this program.
     
-# Entropy exploit license
+***
+    
+# Entropy Exploit license
 
     MIT License
 
@@ -133,5 +147,7 @@
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
+
+***
 
 # Thats all!
