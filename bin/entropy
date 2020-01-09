@@ -23,13 +23,13 @@
 # SOFTWARE.
 
 #blue start 
-	BS="-e \033[1;34m[*]\033[0;97m "
+	BS="-e \033[1;34m[*]\033[0m "
 #color end
 	CE="\033[0m"
 #red start
-	RS="-e \033[1;31m[-]\033[0;97m "
+	RS="-e \033[1;31m[-]\033[0m "
 #green start
-	GNS="-e \033[1;32m[+]\033[0;97m "
+	GNS="-e \033[1;32m[+]\033[0m "
 
 printf '\033]2;Entropy Exploit\a'
 
