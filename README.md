@@ -81,17 +81,16 @@
       -T TIMEOUT, --timeout TIMEOUT
                             The default timeout for netwave is 300s.
       -t TASKS, --task TASKS
-                            Run TASKS number of connects in parallel, default is
+                            Run tasks number of connects in parallel, default is
                             10.
       -c COUNT, --count COUNT
                             The number of IP you want to get from ZoomEye. The
                             maximum is 2000. Default is 100.
       -q, --quiet           Quiet mode.
       -v, --verbose         Show more informations.
-      -i IP, --ip IP        The camera's IP and port. Example: 192.168.1.100:80
+      -i IP, --ip IP        IP:port address of the camera.
       -l INPUTFILE, --list INPUTFILE
-                            The camera's IP:port address file. The file's format
-                            like this 192.168.1.100:80 in a line.
+                            List of camera IP:port addresses. The file's format
       --shodan SHODAN       Your Shodan API Key. You can get help from
                             https://www.shodan.io/
       --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
