@@ -556,8 +556,8 @@ def main():
     elif args.address:
         bundle()
         try:
-            ip=args.ip.split(':')[0]
-            port=args.ip.split(':')[-1]
+            ip=args.address.split(':')[0]
+            port=args.address.split(':')[-1]
             if args.brand == 1:
                 inst=NWThread(ip=ip,port=port)
             if args.brand == 2:
