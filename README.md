@@ -66,9 +66,10 @@
 > entropy -h
 
 ```
-usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
+usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [--timeout TIMEOUT] [-t TASKS]
                [-c COUNT] [-q | -v]
-               [-i IP:PORT | -l INPUTFILE | --shodan API | --zoomeye API] [-u]
+               [-a ADDRESS | -i INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+               [-u]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -78,8 +79,7 @@ optional arguments:
   -o OUTPUTFILE, --output OUTPUTFILE
                         Output into path you input. The default path in dir
                         /tmp
-  -T TIMEOUT, --timeout TIMEOUT
-                        The default timeout for netwave is 300s.
+  --timeout TIMEOUT     The default timeout for netwave is 300s.
   -t TASKS, --task TASKS
                         Run tasks number of connects in parallel, default is
                         10.
@@ -88,13 +88,13 @@ optional arguments:
                         maximum is 2000. Default is 100.
   -q, --quiet           Quiet mode.
   -v, --verbose         Show more informations.
-  -i IP:PORT, --ip IP:PORT
+  -a ADDRESS, --address ADDRESS
                         IP:port address of the camera.
-  -l INPUTFILE, --list INPUTFILE
+  -i INPUTFILE, --input INPUTFILE
                         List of camera IP:port addresses.
-  --shodan API          Your Shodan API Key. You can get help from
+  --shodan SHODAN       Your Shodan API Key. You can get help from
                         https://www.shodan.io/
-  --zoomeye API         Your ZoomEye API Key. You can get help from
+  --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
                         https://www.zoomeye.org/api
   -u, --update          Update Entropy Exploit.
 ```
