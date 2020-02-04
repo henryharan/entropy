@@ -90,8 +90,8 @@
       -v, --verbose         Show more informations.
       -i IP, --ip IP        IP:port address of the camera.
       -l INPUTFILE, --list INPUTFILE
-                            List of camera IP:port addresses. The file's format
-      --shodan API         Your Shodan API Key. You can get help from
+                            List of camera IP:port addresses.
+      --shodan API          Your Shodan API Key. You can get help from
                             https://www.shodan.io/
       --zoomeye API         Your ZoomEye API Key. You can get help from
                             https://www.zoomeye.org/api
