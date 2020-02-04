@@ -36,18 +36,9 @@ import random
 import sys
 import signal
 import time
-try:
-    import requests
-    import tailer
-    import shodan
-    
-except ImportError as e:
-    C = '\033[1;31m'
-    E = '\033[0m'
-    D = '\033[0m'
-    print(C+"[-]"+E+" Missing some necessary dependencies!"+D)
-    sys.exit(0)
-    
+import requests
+import tailer
+import shodan
 
 TMP_PATH='/tmp/'
 
