@@ -563,8 +563,7 @@ def main():
             print(color.B+"[-]"+color.E+" The error occured: %s" % e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     else:
-        os.system("cat banner/banner.txt")
-        print("")
+        bundle()
         print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
 
 if __name__=='__main__':
@@ -577,4 +576,8 @@ if __name__=='__main__':
         E = '\033[0m'
         G = '\033[1;32m'
         D = '\033[0m'
+        import os
+        os.system("clear")
+        banner = open("banner/banner.txt").read()
+        print(banner)
         print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help."+D)
