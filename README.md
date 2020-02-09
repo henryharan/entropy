@@ -1,6 +1,6 @@
 # Entropy Exploit
 
-![AECEA30A-D0FF-4D92-8545-E961B0D338DE](https://user-images.githubusercontent.com/54115104/74106253-2b209080-4b76-11ea-9573-f234ea43211c.jpeg)
+![entropy](https://user-images.githubusercontent.com/54115104/74106253-2b209080-4b76-11ea-9573-f234ea43211c.jpeg)
 
 <p align="center">
   <a href="http://entynetproject.simplesite.com/">
