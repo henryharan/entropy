@@ -1,11 +1,6 @@
 # Entropy Exploit
 
-                                            __                        
-                                ___  ____  / /__________  ____  __  __    ___
-                               / _ \/ __ \/ __/ ___/ __ \/ __ \/ / / /  [|   |=|{)__
-                              /  __/ / / / /_/ /  / /_/ / /_/ / /_/ /    |___| \/   )
-                              \___/_/ /_/\__/_/   \____/ .___/\__, /      /|\      /|
-                                                      /_/    /____/      / | \     | \
+![AECEA30A-D0FF-4D92-8545-E961B0D338DE](https://user-images.githubusercontent.com/54115104/74106253-2b209080-4b76-11ea-9573-f234ea43211c.jpeg)
 
 <p align="center">
   <a href="http://entynetproject.simplesite.com/">
