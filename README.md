@@ -25,7 +25,7 @@
 
 ***
 
-# About Entropy Exploit
+# About Entropy Toolkit
 
     Entropy Toolkit is an IP webcam toolkit that includes 
     Netwave and GoAhead IP Camera attack methods. Entropy 
@@ -53,7 +53,7 @@
 
 ***
 
-# Entropy Exploit execution
+# Entropy Toolkit execution
 
 > entropy -h
 
@@ -93,7 +93,7 @@ optional arguments:
 
 ***
 
-# Entropy Exploit examples
+# Entropy Toolkit examples
 
 > Example of the exploiting a single camera
     
@@ -109,15 +109,15 @@ optional arguments:
 
 ***
 
-# Entropy Exploit disclaimer
+# Entropy Toolkit disclaimer
 
-    Usage of the Entropy Exploit for attacking targets without prior mutual consent is illegal. 
+    Usage of the Entropy Toolkit for attacking targets without prior mutual consent is illegal. 
     It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
     Developers assume no liability and are not responsible for any misuse or damage caused by this program.
     
 ***
     
-# Entropy Exploit license
+# Entropy Toolkit license
 
     MIT License
 
