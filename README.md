@@ -27,9 +27,9 @@
 
 # About Entropy Exploit
 
-    Entropy Exploit is an IP webcam exploit also named Netwave 
-    and GoAhead IP Camera exploit. Entropy is a powerful 
-    exploitation tool for webcams penetration testing.
+    Entropy Exploit is an IP webcam toolkit that includes 
+    Netwave and GoAhead IP Camera attack methods. Entropy 
+    is a powerful toolkit for webcams penetration testing.
 
 ***
 
