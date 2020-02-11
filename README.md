@@ -1,4 +1,4 @@
-# Entropy Exploit
+# Entropy Toolkit
 
 ![entropy](https://user-images.githubusercontent.com/54115104/74149935-04b43100-4c1a-11ea-8bba-d2663b02184a.jpeg)
 
@@ -27,7 +27,7 @@
 
 # About Entropy Exploit
 
-    Entropy Exploit is an IP webcam toolkit that includes 
+    Entropy Toolkit is an IP webcam toolkit that includes 
     Netwave and GoAhead IP Camera attack methods. Entropy 
     is a powerful toolkit for webcams penetration testing.
 
@@ -88,7 +88,7 @@ optional arguments:
                         https://www.shodan.io/
   --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
                         https://www.zoomeye.org/api
-  -u, --update          Update Entropy Exploit.
+  -u, --update          Update Entropy Toolkit.
 ```
 
 ***
