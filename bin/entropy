@@ -31,7 +31,7 @@
 #green start
 	GNS="-e \033[1;32m[+]\033[0m "
 
-printf '\033]2;Entropy Exploit\a'
+printf '\033]2;Entropy Toolkit\a'
 
 if [[ "$1" = "-u" || "$1" = "--update" ]]
 then
