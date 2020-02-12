@@ -44,7 +44,7 @@ TMP_PATH='/tmp/'
 
 parser=argparse.ArgumentParser()
 parser.add_argument("-b","--brand",metavar="[1|2]",dest='brand',help="Choose the brand of IP Webcam. (1)Netwave, (2)GoAhead.",choices=[1,2],type=int)
-parser.add_argument("-o","--output",metavar="<filename>",dest='outputfile',help="Output into path you input.",type=str)
+parser.add_argument("-o","--output",metavar="<outputfile>",dest='outputfile',help="Output into path you input.",type=str)
 parser.add_argument("--timeout",metavar="<timeout>",dest='timeout',help="Timeout in seconds.",type=int,default=300)
 parser.add_argument("-t","--task",metavar="<tasks>",dest='tasks',help="Run tasks number of connects in parallel.",default=10,type=int)
 parser.add_argument("-c","--count",metavar="<count>",dest='count',help="The number of IP you want to get from ZoomEye.",default=100,type=int)
@@ -53,7 +53,7 @@ group1.add_argument("-q","--quiet",dest='quiet',help="Quiet mode.",action='store
 group1.add_argument("-v","--verbose",dest='verbose',help="Verbose mode.",action='store_true')
 group2=parser.add_mutually_exclusive_group()
 group2.add_argument("-a","--address",metavar="<address>",dest='address',help="IP:port address of the webcam.",type=str)
-group2.add_argument("-i","--input",metavar="<filename>",dest='inputfile',help="List of IP:port addresses of webcams.",type=str)
+group2.add_argument("-i","--input",metavar="<inputfile>",dest='inputfile',help="List of IP:port addresses of webcams.",type=str)
 group2.add_argument("--shodan",metavar="<API>",dest='shodan',help="Your Shodan API key.",type=str)
 group2.add_argument("--zoomeye",metavar="<API>",dest='zoomeye',help="Your ZoomEye API key.",type=str)
 parser.add_argument("-u","--update",dest='update',help="Update Entropy Toolkit.",action='store_true')
