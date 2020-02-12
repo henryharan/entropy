@@ -83,7 +83,7 @@ optional arguments:
   -a ADDRESS, --address ADDRESS
                         IP:port address of the webcamera.
   -i INPUTFILE, --input INPUTFILE
-                        List of webcamera IP:port addresses.
+                        List of webcameras IP:port addresses.
   --shodan SHODAN       Your Shodan API Key. You can get help from
                         https://www.shodan.io/
   --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
