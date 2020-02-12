@@ -28,7 +28,7 @@
 # About Entropy Toolkit
 
     Entropy Toolkit is a set of tools to exploit 
-    Netwave and GoAhead IP Webcameras. Entropy is a 
+    Netwave and GoAhead IP Webcams. Entropy is a 
     powerful toolkit for webcams penetration testing.
 
 ***
@@ -66,7 +66,7 @@ usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [--timeout TIMEOUT] [-t TASKS]
 optional arguments:
   -h, --help            show this help message and exit
   -b {1,2}, --brand {1,2}
-                        Choose the brand of IP Webcamera. 1 - represents Netwave,
+                        Choose the brand of IP Webcam. 1 - represents Netwave,
                         2 - represents GoAhead.
   -o OUTPUTFILE, --output OUTPUTFILE
                         Output into path you input. The default path in dir
@@ -81,9 +81,9 @@ optional arguments:
   -q, --quiet           Quiet mode.
   -v, --verbose         Show more informations.
   -a ADDRESS, --address ADDRESS
-                        IP:port address of the webcamera.
+                        IP:port address of the webcam.
   -i INPUTFILE, --input INPUTFILE
-                        List of webcameras IP:port addresses.
+                        List of IP:port addresses of webcams.
   --shodan SHODAN       Your Shodan API Key. You can get help from
                         https://www.shodan.io/
   --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
@@ -95,15 +95,15 @@ optional arguments:
 
 # Entropy Toolkit examples
 
-> Example of the exploiting a single webcamera
+> Example of the exploiting a single webcam
     
     entropy -b 1 -i 192.168.1.100:80 -v  
 
-> Example of the exploiting webcameras from a file
+> Example of the exploiting webcams from a file
 
     entropy -b 2 -l iplist.txt -v
 
-> Example of the exploiting webcameras using shodan
+> Example of the exploiting webcams using shodan
 
     entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
