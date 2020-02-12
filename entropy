@@ -285,8 +285,8 @@ class NWThread(threading.Thread):
                             continue
                     else:
                         if args.outputfile:
-                            logger.info(color.C+"[!]"+color.E+" The IP Camera is not vulnerable."+color.D)
-                        print(color.C+"[!]"+color.E+" The IP Camera is not vulnerable."+color.D)
+                            logger.info(color.C+"[!]"+color.E+" The IP Webcamera is not vulnerable."+color.D)
+                        print(color.C+"[!]"+color.E+" The IP Webcamera is not vulnerable."+color.D)
     def run(self):
         try:
             macaddr=self.getMac()
@@ -303,9 +303,9 @@ class NWThread(threading.Thread):
                     time.sleep(0)
             else:
                 if args.outputfile:
-                    logger.info(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
+                    logger.info(color.C+"[!]"+color.E+" The IP Webcamera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
                     logger.info('')
-                print(color.C+"[!]"+color.E+" The IP Camera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
+                print(color.C+"[!]"+color.E+" The IP Webcamera %s:%s is not vulnerable.%s" % (self.ip,self.port,color.D))
                 time.sleep(0)
         except Exception:
             pass
@@ -538,7 +538,7 @@ def main():
                     
             crack(tmp_ip_list)
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: File not found")
+            print(color.B+"[-]"+color.E+" The error occured: File is not found")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
             
     elif args.address:
