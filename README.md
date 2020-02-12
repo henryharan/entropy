@@ -28,7 +28,7 @@
 # About Entropy Toolkit
 
     Entropy Toolkit is a set of tools to exploit 
-    Netwave and GoAhead IP webameras. Entropy is a 
+    Netwave and GoAhead IP Webcameras. Entropy is a 
     powerful toolkit for webcams penetration testing.
 
 ***
@@ -66,7 +66,7 @@ usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [--timeout TIMEOUT] [-t TASKS]
 optional arguments:
   -h, --help            show this help message and exit
   -b {1,2}, --brand {1,2}
-                        Choose the brand of IP webcamera. 1 - represents Netwave,
+                        Choose the brand of IP Webcamera. 1 - represents Netwave,
                         2 - represents GoAhead.
   -o OUTPUTFILE, --output OUTPUTFILE
                         Output into path you input. The default path in dir
