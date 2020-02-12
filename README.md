@@ -69,7 +69,7 @@ optional arguments:
                         Choose the brand of IP Webcam. (1)Netwave, (2)GoAhead.
   -o OUTPUTFILE, --output OUTPUTFILE
                         Output into path you input.
-  --timeout TIMEOUT     Timeout.
+  --timeout TIMEOUT     Timeout in seconds.
   -t TASKS, --task TASKS
                         Run tasks number of connects in parallel.
   -c COUNT, --count COUNT
