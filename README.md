@@ -66,28 +66,22 @@ usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [--timeout TIMEOUT] [-t TASKS]
 optional arguments:
   -h, --help            show this help message and exit
   -b {1,2}, --brand {1,2}
-                        Choose the brand of IP Webcam. 1 - represents Netwave,
-                        2 - represents GoAhead.
+                        Choose the brand of IP Webcam. (1)Netwave, (2)GoAhead.
   -o OUTPUTFILE, --output OUTPUTFILE
-                        Output into path you input. The default path in dir
-                        /tmp
-  --timeout TIMEOUT     The default timeout for netwave is 300s.
+                        Output into path you input.
+  --timeout TIMEOUT     Timeout.
   -t TASKS, --task TASKS
-                        Run tasks number of connects in parallel, default is
-                        10.
+                        Run tasks number of connects in parallel.
   -c COUNT, --count COUNT
-                        The number of IP you want to get from ZoomEye. The
-                        maximum is 2000. Default is 100.
+                        The number of IP you want to get from ZoomEye.
   -q, --quiet           Quiet mode.
-  -v, --verbose         Show more informations.
+  -v, --verbose         Verbose mode.
   -a ADDRESS, --address ADDRESS
                         IP:port address of the webcam.
   -i INPUTFILE, --input INPUTFILE
                         List of IP:port addresses of webcams.
-  --shodan SHODAN       Your Shodan API Key. You can get help from
-                        https://www.shodan.io/
-  --zoomeye ZOOMEYE     Your ZoomEye API Key. You can get help from
-                        https://www.zoomeye.org/api
+  --shodan SHODAN       Your Shodan API key.
+  --zoomeye ZOOMEYE     Your ZoomEye API key.
   -u, --update          Update Entropy Toolkit.
 ```
 
