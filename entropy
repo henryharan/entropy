@@ -45,7 +45,7 @@ TMP_PATH='/tmp/'
 parser=argparse.ArgumentParser()
 parser.add_argument("-b","--brand",dest='brand',help="Choose the brand of IP Webcam. (1)Netwave, (2)GoAhead.",choices=[1,2],type=int)
 parser.add_argument("-o","--output",dest='outputfile',help="Output into path you input.",type=str)
-parser.add_argument("--timeout",dest='timeout',help="Timeout.",type=int,default=300)
+parser.add_argument("--timeout",dest='timeout',help="Timeout in seconds.",type=int,default=300)
 parser.add_argument("-t","--task",dest='tasks',help="Run tasks number of connects in parallel.",default=10,type=int)
 parser.add_argument("-c","--count",dest='count',help="The number of IP you want to get from ZoomEye.",default=100,type=int)
 group1=parser.add_mutually_exclusive_group()
