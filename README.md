@@ -58,30 +58,30 @@
 > entropy -h
 
 ```
-usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [--timeout TIMEOUT] [-t TASKS]
-               [-c COUNT] [-q | -v]
-               [-a ADDRESS | -i INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+usage: entropy [-h] [-b [1|2]] [-o <outputfile>] [--timeout <timeout>]
+               [-t <tasks>] [-c <count>] [-q | -v]
+               [-a <address> | -i <inputfile> | --shodan <API> | --zoomeye <API>]
                [-u]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -b {1,2}, --brand {1,2}
+  -b [1|2], --brand [1|2]
                         Choose the brand of IP Webcam. (1)Netwave, (2)GoAhead.
-  -o OUTPUTFILE, --output OUTPUTFILE
+  -o <outputfile>, --output <outputfile>
                         Output into path you input.
-  --timeout TIMEOUT     Timeout in seconds.
-  -t TASKS, --task TASKS
+  --timeout <timeout>   Timeout in seconds.
+  -t <tasks>, --task <tasks>
                         Run tasks number of connects in parallel.
-  -c COUNT, --count COUNT
+  -c <count>, --count <count>
                         The number of IP you want to get from ZoomEye.
   -q, --quiet           Quiet mode.
   -v, --verbose         Verbose mode.
-  -a ADDRESS, --address ADDRESS
+  -a <address>, --address <address>
                         IP:port address of the webcam.
-  -i INPUTFILE, --input INPUTFILE
+  -i <inputfile>, --input <inputfile>
                         List of IP:port addresses of webcams.
-  --shodan SHODAN       Your Shodan API key.
-  --zoomeye ZOOMEYE     Your ZoomEye API key.
+  --shodan <API>        Your Shodan API key.
+  --zoomeye <API>       Your ZoomEye API key.
   -u, --update          Update Entropy Toolkit.
 ```
 
