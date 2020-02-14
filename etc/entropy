@@ -563,9 +563,8 @@ def main():
             print(color.B+"[-]"+color.E+" The error occured: %s" % e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     else:
-        bundle()
-        print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-
+        os.system("cat banner/usage.txt")
+        
 if __name__=='__main__':
     try:
         main()
