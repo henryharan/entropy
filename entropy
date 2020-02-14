@@ -556,7 +556,7 @@ def main():
             print(color.B+"[-]"+color.E+" The error occured: %s" % e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
     else:
-        os.system("cat banner/usage.txt")
+        parser.print_help()
         
 if __name__=='__main__':
     try:
