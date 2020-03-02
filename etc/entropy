@@ -506,6 +506,7 @@ def main():
                 tmp_s=Scrapy(key=args.shodan,app='5ccc069c403ebaf9f0171e9517f40e41')
                 tmp_ip_list=tmp_s.shodan()
                 crack(tmp_ip_list)
+            print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured:",e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
@@ -524,6 +525,7 @@ def main():
                     tmp_s = Scrapy(key=args.zoomeye, app='5ccc069c403ebaf9f0171e9517f40e41', page=p)
                     tmp_ip_list=tmp_s.zoomeye()
                 crack(tmp_ip_list)
+            print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured:",e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
@@ -544,6 +546,7 @@ def main():
                     tmp_ip_list.append(i.strip())
                     
             crack(tmp_ip_list)
+            print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured: File is not found")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
@@ -559,6 +562,7 @@ def main():
                 inst=GoAThread(ip=ip,port=port)
             inst.start()
             inst.join()
+            print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured: %s" % e)
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
